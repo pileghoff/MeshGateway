@@ -1,0 +1,52 @@
+\hypertarget{prov_8h}{}\doxysection{/home/pil/\+Projects/\+Mesh\+Gateway/src/components/gateway/include/prov.h File Reference}
+\label{prov_8h}\index{/home/pil/Projects/MeshGateway/src/components/gateway/include/prov.h@{/home/pil/Projects/MeshGateway/src/components/gateway/include/prov.h}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+log.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}nvs\+\_\+flash.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+bt.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+bt\+\_\+main.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+bt\+\_\+device.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+ble\+\_\+mesh\+\_\+defs.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+ble\+\_\+mesh\+\_\+common\+\_\+api.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+ble\+\_\+mesh\+\_\+provisioning\+\_\+api.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+ble\+\_\+mesh\+\_\+networking\+\_\+api.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+ble\+\_\+mesh\+\_\+config\+\_\+model\+\_\+api.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+ble\+\_\+mesh\+\_\+generic\+\_\+model\+\_\+api.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}common.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structdevice__t}{device\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{prov_8h_a97f2e52e8c116c3718ea285c48415df9}{prov\+\_\+cb}} (esp\+\_\+ble\+\_\+mesh\+\_\+prov\+\_\+cb\+\_\+event\+\_\+t event, esp\+\_\+ble\+\_\+mesh\+\_\+prov\+\_\+cb\+\_\+param\+\_\+t $\ast$param)
+\item 
+void \mbox{\hyperlink{prov_8h_a617a52007e7987e81b865d1f4137a478}{prov\+\_\+init}} ()
+\item 
+void \mbox{\hyperlink{prov_8h_a525c2dc3753fab77fc6bd724dce43b64}{start\+\_\+prov}} (\mbox{\hyperlink{structdevice__t}{device\+\_\+t}} $\ast$dev)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{prov_8h_a97f2e52e8c116c3718ea285c48415df9}\label{prov_8h_a97f2e52e8c116c3718ea285c48415df9}} 
+\index{prov.h@{prov.h}!prov\_cb@{prov\_cb}}
+\index{prov\_cb@{prov\_cb}!prov.h@{prov.h}}
+\doxysubsubsection{\texorpdfstring{prov\_cb()}{prov\_cb()}}
+{\footnotesize\ttfamily void prov\+\_\+cb (\begin{DoxyParamCaption}\item[{esp\+\_\+ble\+\_\+mesh\+\_\+prov\+\_\+cb\+\_\+event\+\_\+t}]{event,  }\item[{esp\+\_\+ble\+\_\+mesh\+\_\+prov\+\_\+cb\+\_\+param\+\_\+t $\ast$}]{param }\end{DoxyParamCaption})}
+
+Provisioning client callback function. \mbox{\Hypertarget{prov_8h_a617a52007e7987e81b865d1f4137a478}\label{prov_8h_a617a52007e7987e81b865d1f4137a478}} 
+\index{prov.h@{prov.h}!prov\_init@{prov\_init}}
+\index{prov\_init@{prov\_init}!prov.h@{prov.h}}
+\doxysubsubsection{\texorpdfstring{prov\_init()}{prov\_init()}}
+{\footnotesize\ttfamily void prov\+\_\+init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Initialize the required resources for the provisioning client \mbox{\Hypertarget{prov_8h_a525c2dc3753fab77fc6bd724dce43b64}\label{prov_8h_a525c2dc3753fab77fc6bd724dce43b64}} 
+\index{prov.h@{prov.h}!start\_prov@{start\_prov}}
+\index{start\_prov@{start\_prov}!prov.h@{prov.h}}
+\doxysubsubsection{\texorpdfstring{start\_prov()}{start\_prov()}}
+{\footnotesize\ttfamily void start\+\_\+prov (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structdevice__t}{device\+\_\+t}} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+Start the provisioning process for a device. 

@@ -1,0 +1,26 @@
+\hypertarget{handler_8h}{}\doxysection{/home/pil/\+Projects/\+Mesh\+Gateway/src/components/gateway/include/handler.h File Reference}
+\label{handler_8h}\index{/home/pil/Projects/MeshGateway/src/components/gateway/include/handler.h@{/home/pil/Projects/MeshGateway/src/components/gateway/include/handler.h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{handler_8h_a63a84ff791fdc24218239ed4adb65906}{handle\+\_\+mqtt\+\_\+event}} (char $\ast$topic, int topic\+\_\+len, uint8\+\_\+t $\ast$data, int data\+\_\+len)
+\item 
+void \mbox{\hyperlink{handler_8h_afc8f136b7370d55854adee77f12cde7c}{handler\+\_\+init}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{handler_8h_a63a84ff791fdc24218239ed4adb65906}\label{handler_8h_a63a84ff791fdc24218239ed4adb65906}} 
+\index{handler.h@{handler.h}!handle\_mqtt\_event@{handle\_mqtt\_event}}
+\index{handle\_mqtt\_event@{handle\_mqtt\_event}!handler.h@{handler.h}}
+\doxysubsubsection{\texorpdfstring{handle\_mqtt\_event()}{handle\_mqtt\_event()}}
+{\footnotesize\ttfamily void handle\+\_\+mqtt\+\_\+event (\begin{DoxyParamCaption}\item[{char $\ast$}]{topic,  }\item[{int}]{topic\+\_\+len,  }\item[{uint8\+\_\+t $\ast$}]{data,  }\item[{int}]{data\+\_\+len }\end{DoxyParamCaption})}
+
+Handle incoming M\+Q\+TT messages. This ties the M\+Q\+TT and B\+LE Mesh together. \mbox{\Hypertarget{handler_8h_afc8f136b7370d55854adee77f12cde7c}\label{handler_8h_afc8f136b7370d55854adee77f12cde7c}} 
+\index{handler.h@{handler.h}!handler\_init@{handler\_init}}
+\index{handler\_init@{handler\_init}!handler.h@{handler.h}}
+\doxysubsubsection{\texorpdfstring{handler\_init()}{handler\_init()}}
+{\footnotesize\ttfamily void handler\+\_\+init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Subscribe to the M\+Q\+TT topics and setup the M\+Q\+TT message handler 

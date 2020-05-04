@@ -1,0 +1,18 @@
+{
+    "project_name":       "bootloader",
+    "project_path":       "/esp/esp-idf/components/bootloader/subproject",
+    "build_dir":          "/src/build/bootloader",
+    "config_file":        "/src/sdkconfig",
+    "config_defaults":    "",
+    "app_elf":            "bootloader.elf",
+    "app_bin":            "bootloader.bin",
+    "git_revision":       "v4.0-beta2",
+    "phy_data_partition": "",
+    "monitor_baud" : "115200",
+    "config_environment" : {
+        "COMPONENT_KCONFIGS" : "/esp/esp-idf/components/efuse/Kconfig;/esp/esp-idf/components/esp32/Kconfig;/esp/esp-idf/components/esp_common/Kconfig;/esp/esp-idf/components/log/Kconfig;/esp/esp-idf/components/spi_flash/Kconfig",
+        "COMPONENT_KCONFIGS_PROJBUILD" : "/esp/esp-idf/components/bootloader/Kconfig.projbuild;/esp/esp-idf/components/esptool_py/Kconfig.projbuild;/esp/esp-idf/components/partition_table/Kconfig.projbuild"
+    },
+    "build_components" : [ "bootloader", "bootloader_support", "efuse", "esp32", "esp_common", "esp_rom", "esptool_py", "log", "main", "micro-ecc", "partition_table", "soc", "spi_flash", "xtensa", "" ],
+    "build_component_paths" : [ "/esp/esp-idf/components/bootloader", "/esp/esp-idf/components/bootloader_support", "/esp/esp-idf/components/efuse", "/esp/esp-idf/components/esp32", "/esp/esp-idf/components/esp_common", "/esp/esp-idf/components/esp_rom", "/esp/esp-idf/components/esptool_py", "/esp/esp-idf/components/log", "/esp/esp-idf/components/bootloader/subproject/main", "/esp/esp-idf/components/bootloader/subproject/components/micro-ecc", "/esp/esp-idf/components/partition_table", "/esp/esp-idf/components/soc", "/esp/esp-idf/components/spi_flash", "/esp/esp-idf/components/xtensa", "" ]
+}

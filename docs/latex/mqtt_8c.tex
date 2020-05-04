@@ -1,0 +1,119 @@
+\hypertarget{mqtt_8c}{}\doxysection{/home/pil/\+Projects/\+Mesh\+Gateway/src/components/gateway/mqtt.c File Reference}
+\label{mqtt_8c}\index{/home/pil/Projects/MeshGateway/src/components/gateway/mqtt.c@{/home/pil/Projects/MeshGateway/src/components/gateway/mqtt.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+system.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}nvs\+\_\+flash.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+event\+\_\+loop.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}freertos/\+Free\+R\+T\+O\+S.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}freertos/task.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}freertos/semphr.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}freertos/queue.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}freertos/event\+\_\+groups.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}lwip/sockets.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}lwip/dns.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}lwip/netdb.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+log.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}mqtt\+\_\+client.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}handler.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}board.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{mqtt_8c_afc3d101f633a076cc1ca84b85b6224b2}{T\+AG}}~\char`\"{}M\+Q\+TT\char`\"{}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{mqtt_8c_a750934ebf59d2bc836aa599f702c5fc8}{mqtt\+\_\+sub\+\_\+done}} ()
+\item 
+void \mbox{\hyperlink{mqtt_8c_aa055ac28a86c16dbd204b380f6304a3f}{mqtt\+\_\+sub}} (const char $\ast$topic)
+\item 
+void \mbox{\hyperlink{mqtt_8c_a4ca38439a1d4c11565a8f7418d963327}{mqtt\+\_\+send}} (const char $\ast$topic, const void $\ast$data, int len)
+\item 
+void \mbox{\hyperlink{mqtt_8c_a2855f260bccaef1e51f5d21a92781c25}{mqtt\+\_\+log}} (const char $\ast$message, int level)
+\item 
+void \mbox{\hyperlink{mqtt_8c_a5c68a349b86fe6652c9516ee517d8f1c}{mqtt\+\_\+init}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+volatile int \mbox{\hyperlink{mqtt_8c_a258adfd039cadd8a2a0306625bd21d9d}{connected}} = false
+\item 
+volatile int \mbox{\hyperlink{mqtt_8c_a0edac4e53c3aadf34e162f7dbd4654b5}{ready}} = false
+\item 
+esp\+\_\+mqtt\+\_\+client\+\_\+handle\+\_\+t \mbox{\hyperlink{mqtt_8c_a079567aa85481c2c828fc6b36074db10}{client}}
+\item 
+const char $\ast$ \mbox{\hyperlink{mqtt_8c_a6397826b44f9ce0de3b7c6895e9dc4f8}{err\+\_\+msg}} = \char`\"{}Log message unknown level\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{mqtt_8c_afc3d101f633a076cc1ca84b85b6224b2}\label{mqtt_8c_afc3d101f633a076cc1ca84b85b6224b2}} 
+\index{mqtt.c@{mqtt.c}!TAG@{TAG}}
+\index{TAG@{TAG}!mqtt.c@{mqtt.c}}
+\doxysubsubsection{\texorpdfstring{TAG}{TAG}}
+{\footnotesize\ttfamily \#define T\+AG~\char`\"{}M\+Q\+TT\char`\"{}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{mqtt_8c_a5c68a349b86fe6652c9516ee517d8f1c}\label{mqtt_8c_a5c68a349b86fe6652c9516ee517d8f1c}} 
+\index{mqtt.c@{mqtt.c}!mqtt\_init@{mqtt\_init}}
+\index{mqtt\_init@{mqtt\_init}!mqtt.c@{mqtt.c}}
+\doxysubsubsection{\texorpdfstring{mqtt\_init()}{mqtt\_init()}}
+{\footnotesize\ttfamily void mqtt\+\_\+init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{mqtt_8c_a2855f260bccaef1e51f5d21a92781c25}\label{mqtt_8c_a2855f260bccaef1e51f5d21a92781c25}} 
+\index{mqtt.c@{mqtt.c}!mqtt\_log@{mqtt\_log}}
+\index{mqtt\_log@{mqtt\_log}!mqtt.c@{mqtt.c}}
+\doxysubsubsection{\texorpdfstring{mqtt\_log()}{mqtt\_log()}}
+{\footnotesize\ttfamily void mqtt\+\_\+log (\begin{DoxyParamCaption}\item[{const char $\ast$}]{message,  }\item[{int}]{level }\end{DoxyParamCaption})}
+
+Send a log message to the logging DB over M\+Q\+TT. \mbox{\Hypertarget{mqtt_8c_a4ca38439a1d4c11565a8f7418d963327}\label{mqtt_8c_a4ca38439a1d4c11565a8f7418d963327}} 
+\index{mqtt.c@{mqtt.c}!mqtt\_send@{mqtt\_send}}
+\index{mqtt\_send@{mqtt\_send}!mqtt.c@{mqtt.c}}
+\doxysubsubsection{\texorpdfstring{mqtt\_send()}{mqtt\_send()}}
+{\footnotesize\ttfamily void mqtt\+\_\+send (\begin{DoxyParamCaption}\item[{const char $\ast$}]{topic,  }\item[{const void $\ast$}]{data,  }\item[{int}]{len }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{mqtt_8c_aa055ac28a86c16dbd204b380f6304a3f}\label{mqtt_8c_aa055ac28a86c16dbd204b380f6304a3f}} 
+\index{mqtt.c@{mqtt.c}!mqtt\_sub@{mqtt\_sub}}
+\index{mqtt\_sub@{mqtt\_sub}!mqtt.c@{mqtt.c}}
+\doxysubsubsection{\texorpdfstring{mqtt\_sub()}{mqtt\_sub()}}
+{\footnotesize\ttfamily void mqtt\+\_\+sub (\begin{DoxyParamCaption}\item[{const char $\ast$}]{topic }\end{DoxyParamCaption})}
+
+Subscribe to a M\+Q\+TT topic. If M\+Q\+TT has not been started properly yet, sleep. \mbox{\Hypertarget{mqtt_8c_a750934ebf59d2bc836aa599f702c5fc8}\label{mqtt_8c_a750934ebf59d2bc836aa599f702c5fc8}} 
+\index{mqtt.c@{mqtt.c}!mqtt\_sub\_done@{mqtt\_sub\_done}}
+\index{mqtt\_sub\_done@{mqtt\_sub\_done}!mqtt.c@{mqtt.c}}
+\doxysubsubsection{\texorpdfstring{mqtt\_sub\_done()}{mqtt\_sub\_done()}}
+{\footnotesize\ttfamily void mqtt\+\_\+sub\+\_\+done (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Signal to the system that all M\+Q\+TT topics has been successfully subscribed to. 
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{mqtt_8c_a079567aa85481c2c828fc6b36074db10}\label{mqtt_8c_a079567aa85481c2c828fc6b36074db10}} 
+\index{mqtt.c@{mqtt.c}!client@{client}}
+\index{client@{client}!mqtt.c@{mqtt.c}}
+\doxysubsubsection{\texorpdfstring{client}{client}}
+{\footnotesize\ttfamily esp\+\_\+mqtt\+\_\+client\+\_\+handle\+\_\+t client}
+
+\mbox{\Hypertarget{mqtt_8c_a258adfd039cadd8a2a0306625bd21d9d}\label{mqtt_8c_a258adfd039cadd8a2a0306625bd21d9d}} 
+\index{mqtt.c@{mqtt.c}!connected@{connected}}
+\index{connected@{connected}!mqtt.c@{mqtt.c}}
+\doxysubsubsection{\texorpdfstring{connected}{connected}}
+{\footnotesize\ttfamily volatile int connected = false}
+
+\mbox{\Hypertarget{mqtt_8c_a6397826b44f9ce0de3b7c6895e9dc4f8}\label{mqtt_8c_a6397826b44f9ce0de3b7c6895e9dc4f8}} 
+\index{mqtt.c@{mqtt.c}!err\_msg@{err\_msg}}
+\index{err\_msg@{err\_msg}!mqtt.c@{mqtt.c}}
+\doxysubsubsection{\texorpdfstring{err\_msg}{err\_msg}}
+{\footnotesize\ttfamily const char$\ast$ err\+\_\+msg = \char`\"{}Log message unknown level\char`\"{}}
+
+\mbox{\Hypertarget{mqtt_8c_a0edac4e53c3aadf34e162f7dbd4654b5}\label{mqtt_8c_a0edac4e53c3aadf34e162f7dbd4654b5}} 
+\index{mqtt.c@{mqtt.c}!ready@{ready}}
+\index{ready@{ready}!mqtt.c@{mqtt.c}}
+\doxysubsubsection{\texorpdfstring{ready}{ready}}
+{\footnotesize\ttfamily volatile int ready = false}
+

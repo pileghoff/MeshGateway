@@ -1,0 +1,94 @@
+\hypertarget{handler_8c}{}\doxysection{/home/pil/\+Projects/\+Mesh\+Gateway/src/components/gateway/handler.c File Reference}
+\label{handler_8c}\index{/home/pil/Projects/MeshGateway/src/components/gateway/handler.c@{/home/pil/Projects/MeshGateway/src/components/gateway/handler.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}prov.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}mqtt.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}board.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{handler_8c_a69d18af035ac62ab44c8577e7bc0c91c}{T\+O\+P\+I\+C\+\_\+\+N\+UM}}~(sizeof(\mbox{\hyperlink{handler_8c_a7cab91de29968bd83d01307aa1b65abc}{topics}})/sizeof(\mbox{\hyperlink{handler_8c_a7cab91de29968bd83d01307aa1b65abc}{topics}}\mbox{[}0\mbox{]}))
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{handler_8c_a63a84ff791fdc24218239ed4adb65906}{handle\+\_\+mqtt\+\_\+event}} (char $\ast$topic, int topic\+\_\+len, uint8\+\_\+t $\ast$data, int data\+\_\+len)
+\item 
+void \mbox{\hyperlink{handler_8c_afc8f136b7370d55854adee77f12cde7c}{handler\+\_\+init}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const char \mbox{\hyperlink{handler_8c_a7cab91de29968bd83d01307aa1b65abc}{topics}} \mbox{[}$\,$\mbox{]}\mbox{[}22\mbox{]}
+\item 
+const int \mbox{\hyperlink{handler_8c_a9fd5e24d87d7ca1fab464eb965bc085f}{topic\+\_\+data\+\_\+size}} \mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{handler_8c_a69d18af035ac62ab44c8577e7bc0c91c}\label{handler_8c_a69d18af035ac62ab44c8577e7bc0c91c}} 
+\index{handler.c@{handler.c}!TOPIC\_NUM@{TOPIC\_NUM}}
+\index{TOPIC\_NUM@{TOPIC\_NUM}!handler.c@{handler.c}}
+\doxysubsubsection{\texorpdfstring{TOPIC\_NUM}{TOPIC\_NUM}}
+{\footnotesize\ttfamily \#define T\+O\+P\+I\+C\+\_\+\+N\+UM~(sizeof(\mbox{\hyperlink{handler_8c_a7cab91de29968bd83d01307aa1b65abc}{topics}})/sizeof(\mbox{\hyperlink{handler_8c_a7cab91de29968bd83d01307aa1b65abc}{topics}}\mbox{[}0\mbox{]}))}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{handler_8c_a63a84ff791fdc24218239ed4adb65906}\label{handler_8c_a63a84ff791fdc24218239ed4adb65906}} 
+\index{handler.c@{handler.c}!handle\_mqtt\_event@{handle\_mqtt\_event}}
+\index{handle\_mqtt\_event@{handle\_mqtt\_event}!handler.c@{handler.c}}
+\doxysubsubsection{\texorpdfstring{handle\_mqtt\_event()}{handle\_mqtt\_event()}}
+{\footnotesize\ttfamily void handle\+\_\+mqtt\+\_\+event (\begin{DoxyParamCaption}\item[{char $\ast$}]{topic,  }\item[{int}]{topic\+\_\+len,  }\item[{uint8\+\_\+t $\ast$}]{data,  }\item[{int}]{data\+\_\+len }\end{DoxyParamCaption})}
+
+Handle incoming M\+Q\+TT messages. This ties the M\+Q\+TT and B\+LE Mesh together. \mbox{\Hypertarget{handler_8c_afc8f136b7370d55854adee77f12cde7c}\label{handler_8c_afc8f136b7370d55854adee77f12cde7c}} 
+\index{handler.c@{handler.c}!handler\_init@{handler\_init}}
+\index{handler\_init@{handler\_init}!handler.c@{handler.c}}
+\doxysubsubsection{\texorpdfstring{handler\_init()}{handler\_init()}}
+{\footnotesize\ttfamily void handler\+\_\+init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Subscribe to the M\+Q\+TT topics and setup the M\+Q\+TT message handler 
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{handler_8c_a9fd5e24d87d7ca1fab464eb965bc085f}\label{handler_8c_a9fd5e24d87d7ca1fab464eb965bc085f}} 
+\index{handler.c@{handler.c}!topic\_data\_size@{topic\_data\_size}}
+\index{topic\_data\_size@{topic\_data\_size}!handler.c@{handler.c}}
+\doxysubsubsection{\texorpdfstring{topic\_data\_size}{topic\_data\_size}}
+{\footnotesize\ttfamily const int topic\+\_\+data\+\_\+size\mbox{[}$\,$\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{structdevice__t}{device\_t}}),}
+\DoxyCodeLine{                                3*\textcolor{keyword}{sizeof}(uint16\_t),}
+\DoxyCodeLine{                                2*\textcolor{keyword}{sizeof}(uint16\_t),}
+\DoxyCodeLine{                                3*\textcolor{keyword}{sizeof}(uint16\_t),}
+\DoxyCodeLine{                                2*\textcolor{keyword}{sizeof}(uint16\_t),}
+\DoxyCodeLine{                                \textcolor{keyword}{sizeof}(uint16\_t),}
+\DoxyCodeLine{                                \textcolor{keyword}{sizeof}(uint16\_t),}
+\DoxyCodeLine{                                \textcolor{keyword}{sizeof}(uint16\_t),}
+\DoxyCodeLine{                                \textcolor{keyword}{sizeof}(uint8\_t)\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{handler_8c_a7cab91de29968bd83d01307aa1b65abc}\label{handler_8c_a7cab91de29968bd83d01307aa1b65abc}} 
+\index{handler.c@{handler.c}!topics@{topics}}
+\index{topics@{topics}!handler.c@{handler.c}}
+\doxysubsubsection{\texorpdfstring{topics}{topics}}
+{\footnotesize\ttfamily const char topics\mbox{[}$\,$\mbox{]}\mbox{[}22\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{\textcolor{stringliteral}{"/device/prov"},}
+\DoxyCodeLine{                           \textcolor{stringliteral}{"/device/conf/sub/add"},}
+\DoxyCodeLine{                           \textcolor{stringliteral}{"/device/conf/sub/del"},}
+\DoxyCodeLine{                           \textcolor{stringliteral}{"/device/conf/pub"},}
+\DoxyCodeLine{                           \textcolor{stringliteral}{"/device/conf/key/bind"},}
+\DoxyCodeLine{                           \textcolor{stringliteral}{"/device/conf/reset"},}
+\DoxyCodeLine{                           \textcolor{stringliteral}{"/device/conf/comp/get"},}
+\DoxyCodeLine{                           \textcolor{stringliteral}{"/device/conf/key/add"},}
+\DoxyCodeLine{                           \textcolor{stringliteral}{"/device/error"}\}}
+
+\end{DoxyCode}

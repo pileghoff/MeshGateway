@@ -1,0 +1,150 @@
+\hypertarget{mesh_8c}{}\doxysection{/home/pil/\+Projects/\+Mesh\+Gateway/src/components/gateway/mesh.c File Reference}
+\label{mesh_8c}\index{/home/pil/Projects/MeshGateway/src/components/gateway/mesh.c@{/home/pil/Projects/MeshGateway/src/components/gateway/mesh.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+log.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}nvs\+\_\+flash.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+bt.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+bt\+\_\+main.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+bt\+\_\+device.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+ble\+\_\+mesh\+\_\+defs.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+ble\+\_\+mesh\+\_\+common\+\_\+api.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+ble\+\_\+mesh\+\_\+provisioning\+\_\+api.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+ble\+\_\+mesh\+\_\+networking\+\_\+api.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+ble\+\_\+mesh\+\_\+config\+\_\+model\+\_\+api.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+ble\+\_\+mesh\+\_\+generic\+\_\+model\+\_\+api.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}prov.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}common.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}network.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}mqtt.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}handler.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}mesh.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structesp__ble__mesh__key}{esp\+\_\+ble\+\_\+mesh\+\_\+key}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{mesh_8c_afc3d101f633a076cc1ca84b85b6224b2}{T\+AG}}~\char`\"{}mesh\char`\"{}
+\item 
+\#define \mbox{\hyperlink{mesh_8c_abde255c5abc3ab0c35adf9e0eedaa714}{C\+I\+D\+\_\+\+E\+SP}}~0x02\+E5
+\item 
+\#define \mbox{\hyperlink{mesh_8c_ae5b411da3be6436504b75ffb1a59387f}{M\+S\+G\+\_\+\+S\+E\+N\+D\+\_\+\+T\+TL}}~3
+\item 
+\#define \mbox{\hyperlink{mesh_8c_abf1bb780d063a02e86e0c152f2aef38d}{M\+S\+G\+\_\+\+S\+E\+N\+D\+\_\+\+R\+EL}}~false
+\item 
+\#define \mbox{\hyperlink{mesh_8c_ab1ba7ecdbacc376bc6415d4bc01846ec}{M\+S\+G\+\_\+\+T\+I\+M\+E\+O\+UT}}~0
+\item 
+\#define \mbox{\hyperlink{mesh_8c_a7f6c9e50b4c9e1492c8c6a70e168b787}{M\+S\+G\+\_\+\+R\+O\+LE}}~R\+O\+L\+E\+\_\+\+P\+R\+O\+V\+I\+S\+I\+O\+N\+ER
+\item 
+\#define \mbox{\hyperlink{mesh_8c_abb85539213797ec4976b1d9f2e621047}{C\+O\+M\+P\+\_\+\+D\+A\+T\+A\+\_\+\+P\+A\+G\+E\+\_\+0}}~0x00
+\item 
+\#define \mbox{\hyperlink{mesh_8c_aecc495dad9dcf4e16c86634006659738}{A\+P\+P\+\_\+\+K\+E\+Y\+\_\+\+I\+DX}}~0x0000
+\item 
+\#define \mbox{\hyperlink{mesh_8c_a60577693af25b0f65b5a775cf51c2e6a}{A\+P\+P\+\_\+\+K\+E\+Y\+\_\+\+O\+C\+T\+ET}}~0x12
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{mesh_8c_afa6aa6d7c42de1c3ae77f7a0f18e7e21}{mesh\+\_\+init}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{mesh_8c_a247fad05a3f83ac8d7c48499ad1673cf}{self\+\_\+uuid}} \mbox{[}16\mbox{]}
+\item 
+struct \mbox{\hyperlink{structesp__ble__mesh__key}{esp\+\_\+ble\+\_\+mesh\+\_\+key}} \mbox{\hyperlink{mesh_8c_afae6ebd19d3b5668aa9313c191c6096f}{prov\+\_\+key}}
+\item 
+esp\+\_\+ble\+\_\+mesh\+\_\+prov\+\_\+t \mbox{\hyperlink{mesh_8c_aa4572504622beb18ca2f41077573ee52}{provision}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{mesh_8c_aecc495dad9dcf4e16c86634006659738}\label{mesh_8c_aecc495dad9dcf4e16c86634006659738}} 
+\index{mesh.c@{mesh.c}!APP\_KEY\_IDX@{APP\_KEY\_IDX}}
+\index{APP\_KEY\_IDX@{APP\_KEY\_IDX}!mesh.c@{mesh.c}}
+\doxysubsubsection{\texorpdfstring{APP\_KEY\_IDX}{APP\_KEY\_IDX}}
+{\footnotesize\ttfamily \#define A\+P\+P\+\_\+\+K\+E\+Y\+\_\+\+I\+DX~0x0000}
+
+\mbox{\Hypertarget{mesh_8c_a60577693af25b0f65b5a775cf51c2e6a}\label{mesh_8c_a60577693af25b0f65b5a775cf51c2e6a}} 
+\index{mesh.c@{mesh.c}!APP\_KEY\_OCTET@{APP\_KEY\_OCTET}}
+\index{APP\_KEY\_OCTET@{APP\_KEY\_OCTET}!mesh.c@{mesh.c}}
+\doxysubsubsection{\texorpdfstring{APP\_KEY\_OCTET}{APP\_KEY\_OCTET}}
+{\footnotesize\ttfamily \#define A\+P\+P\+\_\+\+K\+E\+Y\+\_\+\+O\+C\+T\+ET~0x12}
+
+\mbox{\Hypertarget{mesh_8c_abde255c5abc3ab0c35adf9e0eedaa714}\label{mesh_8c_abde255c5abc3ab0c35adf9e0eedaa714}} 
+\index{mesh.c@{mesh.c}!CID\_ESP@{CID\_ESP}}
+\index{CID\_ESP@{CID\_ESP}!mesh.c@{mesh.c}}
+\doxysubsubsection{\texorpdfstring{CID\_ESP}{CID\_ESP}}
+{\footnotesize\ttfamily \#define C\+I\+D\+\_\+\+E\+SP~0x02\+E5}
+
+\mbox{\Hypertarget{mesh_8c_abb85539213797ec4976b1d9f2e621047}\label{mesh_8c_abb85539213797ec4976b1d9f2e621047}} 
+\index{mesh.c@{mesh.c}!COMP\_DATA\_PAGE\_0@{COMP\_DATA\_PAGE\_0}}
+\index{COMP\_DATA\_PAGE\_0@{COMP\_DATA\_PAGE\_0}!mesh.c@{mesh.c}}
+\doxysubsubsection{\texorpdfstring{COMP\_DATA\_PAGE\_0}{COMP\_DATA\_PAGE\_0}}
+{\footnotesize\ttfamily \#define C\+O\+M\+P\+\_\+\+D\+A\+T\+A\+\_\+\+P\+A\+G\+E\+\_\+0~0x00}
+
+\mbox{\Hypertarget{mesh_8c_a7f6c9e50b4c9e1492c8c6a70e168b787}\label{mesh_8c_a7f6c9e50b4c9e1492c8c6a70e168b787}} 
+\index{mesh.c@{mesh.c}!MSG\_ROLE@{MSG\_ROLE}}
+\index{MSG\_ROLE@{MSG\_ROLE}!mesh.c@{mesh.c}}
+\doxysubsubsection{\texorpdfstring{MSG\_ROLE}{MSG\_ROLE}}
+{\footnotesize\ttfamily \#define M\+S\+G\+\_\+\+R\+O\+LE~R\+O\+L\+E\+\_\+\+P\+R\+O\+V\+I\+S\+I\+O\+N\+ER}
+
+\mbox{\Hypertarget{mesh_8c_abf1bb780d063a02e86e0c152f2aef38d}\label{mesh_8c_abf1bb780d063a02e86e0c152f2aef38d}} 
+\index{mesh.c@{mesh.c}!MSG\_SEND\_REL@{MSG\_SEND\_REL}}
+\index{MSG\_SEND\_REL@{MSG\_SEND\_REL}!mesh.c@{mesh.c}}
+\doxysubsubsection{\texorpdfstring{MSG\_SEND\_REL}{MSG\_SEND\_REL}}
+{\footnotesize\ttfamily \#define M\+S\+G\+\_\+\+S\+E\+N\+D\+\_\+\+R\+EL~false}
+
+\mbox{\Hypertarget{mesh_8c_ae5b411da3be6436504b75ffb1a59387f}\label{mesh_8c_ae5b411da3be6436504b75ffb1a59387f}} 
+\index{mesh.c@{mesh.c}!MSG\_SEND\_TTL@{MSG\_SEND\_TTL}}
+\index{MSG\_SEND\_TTL@{MSG\_SEND\_TTL}!mesh.c@{mesh.c}}
+\doxysubsubsection{\texorpdfstring{MSG\_SEND\_TTL}{MSG\_SEND\_TTL}}
+{\footnotesize\ttfamily \#define M\+S\+G\+\_\+\+S\+E\+N\+D\+\_\+\+T\+TL~3}
+
+\mbox{\Hypertarget{mesh_8c_ab1ba7ecdbacc376bc6415d4bc01846ec}\label{mesh_8c_ab1ba7ecdbacc376bc6415d4bc01846ec}} 
+\index{mesh.c@{mesh.c}!MSG\_TIMEOUT@{MSG\_TIMEOUT}}
+\index{MSG\_TIMEOUT@{MSG\_TIMEOUT}!mesh.c@{mesh.c}}
+\doxysubsubsection{\texorpdfstring{MSG\_TIMEOUT}{MSG\_TIMEOUT}}
+{\footnotesize\ttfamily \#define M\+S\+G\+\_\+\+T\+I\+M\+E\+O\+UT~0}
+
+\mbox{\Hypertarget{mesh_8c_afc3d101f633a076cc1ca84b85b6224b2}\label{mesh_8c_afc3d101f633a076cc1ca84b85b6224b2}} 
+\index{mesh.c@{mesh.c}!TAG@{TAG}}
+\index{TAG@{TAG}!mesh.c@{mesh.c}}
+\doxysubsubsection{\texorpdfstring{TAG}{TAG}}
+{\footnotesize\ttfamily \#define T\+AG~\char`\"{}mesh\char`\"{}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{mesh_8c_afa6aa6d7c42de1c3ae77f7a0f18e7e21}\label{mesh_8c_afa6aa6d7c42de1c3ae77f7a0f18e7e21}} 
+\index{mesh.c@{mesh.c}!mesh\_init@{mesh\_init}}
+\index{mesh\_init@{mesh\_init}!mesh.c@{mesh.c}}
+\doxysubsubsection{\texorpdfstring{mesh\_init()}{mesh\_init()}}
+{\footnotesize\ttfamily void mesh\+\_\+init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{mesh_8c_afae6ebd19d3b5668aa9313c191c6096f}\label{mesh_8c_afae6ebd19d3b5668aa9313c191c6096f}} 
+\index{mesh.c@{mesh.c}!prov\_key@{prov\_key}}
+\index{prov\_key@{prov\_key}!mesh.c@{mesh.c}}
+\doxysubsubsection{\texorpdfstring{prov\_key}{prov\_key}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structesp__ble__mesh__key}{esp\+\_\+ble\+\_\+mesh\+\_\+key}} prov\+\_\+key}
+
+\mbox{\Hypertarget{mesh_8c_aa4572504622beb18ca2f41077573ee52}\label{mesh_8c_aa4572504622beb18ca2f41077573ee52}} 
+\index{mesh.c@{mesh.c}!provision@{provision}}
+\index{provision@{provision}!mesh.c@{mesh.c}}
+\doxysubsubsection{\texorpdfstring{provision}{provision}}
+{\footnotesize\ttfamily esp\+\_\+ble\+\_\+mesh\+\_\+prov\+\_\+t provision}
+
+\mbox{\Hypertarget{mesh_8c_a247fad05a3f83ac8d7c48499ad1673cf}\label{mesh_8c_a247fad05a3f83ac8d7c48499ad1673cf}} 
+\index{mesh.c@{mesh.c}!self\_uuid@{self\_uuid}}
+\index{self\_uuid@{self\_uuid}!mesh.c@{mesh.c}}
+\doxysubsubsection{\texorpdfstring{self\_uuid}{self\_uuid}}
+{\footnotesize\ttfamily uint8\+\_\+t self\+\_\+uuid\mbox{[}16\mbox{]}}
+

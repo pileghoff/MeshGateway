@@ -1,0 +1,331 @@
+\hypertarget{config_8c}{}\doxysection{/home/pil/\+Projects/\+Mesh\+Gateway/src/components/gateway/config.c File Reference}
+\label{config_8c}\index{/home/pil/Projects/MeshGateway/src/components/gateway/config.c@{/home/pil/Projects/MeshGateway/src/components/gateway/config.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+log.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}nvs\+\_\+flash.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+bt.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+bt\+\_\+main.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+bt\+\_\+device.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+ble\+\_\+mesh\+\_\+defs.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+ble\+\_\+mesh\+\_\+common\+\_\+api.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+ble\+\_\+mesh\+\_\+provisioning\+\_\+api.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+ble\+\_\+mesh\+\_\+networking\+\_\+api.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+ble\+\_\+mesh\+\_\+config\+\_\+model\+\_\+api.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+ble\+\_\+mesh\+\_\+generic\+\_\+model\+\_\+api.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}common.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}mqtt.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structesp__ble__mesh__key}{esp\+\_\+ble\+\_\+mesh\+\_\+key}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{config_8c_afc3d101f633a076cc1ca84b85b6224b2}{T\+AG}}~\char`\"{}mesh\+\_\+config\char`\"{}
+\item 
+\#define \mbox{\hyperlink{config_8c_ab2df94e66d170d3f40cbb0403549002f}{C\+O\+N\+F\+I\+G\+\_\+\+O\+P\+\_\+\+S\+U\+B\+\_\+\+A\+DD}}~0x1
+\item 
+\#define \mbox{\hyperlink{config_8c_ad6f88733e59b42c33b68fe8e1ee688f5}{C\+O\+N\+F\+I\+G\+\_\+\+O\+P\+\_\+\+P\+U\+B\+\_\+\+S\+ET}}~0x2
+\item 
+\#define \mbox{\hyperlink{config_8c_a15fb159006fe282bf38b7bf416424519}{C\+O\+N\+F\+I\+G\+\_\+\+O\+P\+\_\+\+C\+O\+M\+P\+\_\+\+G\+ET}}~0x3
+\item 
+\#define \mbox{\hyperlink{config_8c_ae26e7cfb81a1668b12019de923daee50}{C\+O\+N\+F\+I\+G\+\_\+\+O\+P\+\_\+\+A\+P\+P\+\_\+\+B\+I\+ND}}~0x4
+\item 
+\#define \mbox{\hyperlink{config_8c_a82f47b42fd14b1098b487eb0f9d30106}{C\+O\+N\+F\+I\+G\+\_\+\+O\+P\+\_\+\+K\+E\+Y\+\_\+\+A\+DD}}~0x5
+\item 
+\#define \mbox{\hyperlink{config_8c_aeef5b7e31c367baea89d93647fe1c3a1}{C\+O\+N\+F\+I\+G\+\_\+\+O\+P\+\_\+\+S\+U\+B\+\_\+\+D\+EL}}~0x6
+\item 
+\#define \mbox{\hyperlink{config_8c_a5eb105dec021987b4f8c25743b68e349}{C\+O\+N\+F\+I\+G\+\_\+\+O\+P\+\_\+\+R\+E\+S\+ET}}~0x7
+\item 
+\#define \mbox{\hyperlink{config_8c_abe03d152567382444227b77bf22bbd85}{M\+A\+X\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+Q\+U\+E\+UE}}~7
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{config_8c_acfd58f7ff73c835c3c3a770f6f3871e8}{config\+\_\+reset}} (uint16\+\_\+t addr)
+\item 
+esp\+\_\+err\+\_\+t \mbox{\hyperlink{config_8c_ae63c5ddb5ff9941d7ba24f6915485e90}{\+\_\+config\+\_\+reset}} (uint16\+\_\+t addr)
+\item 
+void \mbox{\hyperlink{config_8c_aeabd0a1e7abcd547ef8bee4e45044ed9}{config\+\_\+sub\+\_\+add}} (uint16\+\_\+t addr, uint16\+\_\+t sub\+\_\+addr, uint16\+\_\+t model\+\_\+id)
+\item 
+esp\+\_\+err\+\_\+t \mbox{\hyperlink{config_8c_a748a8e731b87381bc0273226cc8abd65}{\+\_\+config\+\_\+sub\+\_\+add}} (uint16\+\_\+t addr, uint16\+\_\+t sub\+\_\+addr, uint16\+\_\+t model\+\_\+id)
+\item 
+void \mbox{\hyperlink{config_8c_afafedba99339f9fc75eaf6bf4bfef2cd}{config\+\_\+sub\+\_\+delete}} (uint16\+\_\+t addr, uint16\+\_\+t model\+\_\+id)
+\item 
+esp\+\_\+err\+\_\+t \mbox{\hyperlink{config_8c_a3f938eede225af45573db87254ee3654}{\+\_\+config\+\_\+sub\+\_\+delete}} (uint16\+\_\+t addr, uint16\+\_\+t model\+\_\+id)
+\item 
+void \mbox{\hyperlink{config_8c_a400e20f69f6b63d623d667bc76e2847e}{config\+\_\+pub\+\_\+set}} (uint16\+\_\+t addr, uint16\+\_\+t publish\+\_\+addr, uint16\+\_\+t model\+\_\+id)
+\item 
+esp\+\_\+err\+\_\+t \mbox{\hyperlink{config_8c_ad7e9330c173e97c7b222e14323282aa6}{\+\_\+config\+\_\+pub\+\_\+set}} (uint16\+\_\+t addr, uint16\+\_\+t publish\+\_\+addr, uint16\+\_\+t model\+\_\+id)
+\item 
+void \mbox{\hyperlink{config_8c_a61b0aeec560e1aa0c7bb0a53b279c382}{config\+\_\+comp\+\_\+data\+\_\+get}} (uint16\+\_\+t addr)
+\item 
+esp\+\_\+err\+\_\+t \mbox{\hyperlink{config_8c_a6aac54db6fd40f1accfaa519705ac431}{\+\_\+config\+\_\+comp\+\_\+data\+\_\+get}} (uint16\+\_\+t addr)
+\item 
+void \mbox{\hyperlink{config_8c_a1c6787d8958cdfbc27fc21544728dd70}{config\+\_\+app\+\_\+key\+\_\+add}} (uint16\+\_\+t addr)
+\item 
+esp\+\_\+err\+\_\+t \mbox{\hyperlink{config_8c_a85626c6daaaf051e6a36dacb16121086}{\+\_\+config\+\_\+app\+\_\+key\+\_\+add}} (uint16\+\_\+t addr)
+\item 
+void \mbox{\hyperlink{config_8c_a3fe2786bcc218e661f12c550b1e73137}{config\+\_\+model\+\_\+app\+\_\+bind}} (uint16\+\_\+t addr, uint16\+\_\+t model\+\_\+id)
+\item 
+esp\+\_\+err\+\_\+t \mbox{\hyperlink{config_8c_a8bfe5d3ba0c9bc3276648a637673be78}{\+\_\+config\+\_\+model\+\_\+app\+\_\+bind}} (uint16\+\_\+t addr, uint16\+\_\+t model\+\_\+id)
+\item 
+void \mbox{\hyperlink{config_8c_ad593cc6ea5acc31a8bc625caa6caee2e}{config\+\_\+task}} ()
+\item 
+void \mbox{\hyperlink{config_8c_a6f183ebbc64bea4c4243b854b28eeb69}{config\+\_\+client\+\_\+cb}} (esp\+\_\+ble\+\_\+mesh\+\_\+cfg\+\_\+client\+\_\+cb\+\_\+event\+\_\+t event, esp\+\_\+ble\+\_\+mesh\+\_\+cfg\+\_\+client\+\_\+cb\+\_\+param\+\_\+t $\ast$param)
+\item 
+esp\+\_\+ble\+\_\+mesh\+\_\+client\+\_\+common\+\_\+param\+\_\+t \mbox{\hyperlink{config_8c_add0b80bb1d0234ea2b50d86cc0e8e930}{new\+\_\+param}} ()
+\item 
+void \mbox{\hyperlink{config_8c_aa1d3b38b1da7f1a7f57c4a583ad1fdb1}{config\+\_\+init}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+esp\+\_\+ble\+\_\+mesh\+\_\+client\+\_\+t \mbox{\hyperlink{config_8c_a30dbbe3548a569d0b17d6f5cba317e90}{config\+\_\+client}}
+\item 
+Semaphore\+Handle\+\_\+t \mbox{\hyperlink{config_8c_a969ceb20856892393e13fb8411485ab1}{config\+\_\+sem}}
+\item 
+Queue\+Handle\+\_\+t \mbox{\hyperlink{config_8c_a977f7cb0d17dd554afbb04d5b6cf59e2}{config\+\_\+queue}}
+\item 
+struct \mbox{\hyperlink{structesp__ble__mesh__key}{esp\+\_\+ble\+\_\+mesh\+\_\+key}} \mbox{\hyperlink{config_8c_afae6ebd19d3b5668aa9313c191c6096f}{prov\+\_\+key}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{config_8c_ae26e7cfb81a1668b12019de923daee50}\label{config_8c_ae26e7cfb81a1668b12019de923daee50}} 
+\index{config.c@{config.c}!CONFIG\_OP\_APP\_BIND@{CONFIG\_OP\_APP\_BIND}}
+\index{CONFIG\_OP\_APP\_BIND@{CONFIG\_OP\_APP\_BIND}!config.c@{config.c}}
+\doxysubsubsection{\texorpdfstring{CONFIG\_OP\_APP\_BIND}{CONFIG\_OP\_APP\_BIND}}
+{\footnotesize\ttfamily \#define C\+O\+N\+F\+I\+G\+\_\+\+O\+P\+\_\+\+A\+P\+P\+\_\+\+B\+I\+ND~0x4}
+
+\mbox{\Hypertarget{config_8c_a15fb159006fe282bf38b7bf416424519}\label{config_8c_a15fb159006fe282bf38b7bf416424519}} 
+\index{config.c@{config.c}!CONFIG\_OP\_COMP\_GET@{CONFIG\_OP\_COMP\_GET}}
+\index{CONFIG\_OP\_COMP\_GET@{CONFIG\_OP\_COMP\_GET}!config.c@{config.c}}
+\doxysubsubsection{\texorpdfstring{CONFIG\_OP\_COMP\_GET}{CONFIG\_OP\_COMP\_GET}}
+{\footnotesize\ttfamily \#define C\+O\+N\+F\+I\+G\+\_\+\+O\+P\+\_\+\+C\+O\+M\+P\+\_\+\+G\+ET~0x3}
+
+\mbox{\Hypertarget{config_8c_a82f47b42fd14b1098b487eb0f9d30106}\label{config_8c_a82f47b42fd14b1098b487eb0f9d30106}} 
+\index{config.c@{config.c}!CONFIG\_OP\_KEY\_ADD@{CONFIG\_OP\_KEY\_ADD}}
+\index{CONFIG\_OP\_KEY\_ADD@{CONFIG\_OP\_KEY\_ADD}!config.c@{config.c}}
+\doxysubsubsection{\texorpdfstring{CONFIG\_OP\_KEY\_ADD}{CONFIG\_OP\_KEY\_ADD}}
+{\footnotesize\ttfamily \#define C\+O\+N\+F\+I\+G\+\_\+\+O\+P\+\_\+\+K\+E\+Y\+\_\+\+A\+DD~0x5}
+
+\mbox{\Hypertarget{config_8c_ad6f88733e59b42c33b68fe8e1ee688f5}\label{config_8c_ad6f88733e59b42c33b68fe8e1ee688f5}} 
+\index{config.c@{config.c}!CONFIG\_OP\_PUB\_SET@{CONFIG\_OP\_PUB\_SET}}
+\index{CONFIG\_OP\_PUB\_SET@{CONFIG\_OP\_PUB\_SET}!config.c@{config.c}}
+\doxysubsubsection{\texorpdfstring{CONFIG\_OP\_PUB\_SET}{CONFIG\_OP\_PUB\_SET}}
+{\footnotesize\ttfamily \#define C\+O\+N\+F\+I\+G\+\_\+\+O\+P\+\_\+\+P\+U\+B\+\_\+\+S\+ET~0x2}
+
+\mbox{\Hypertarget{config_8c_a5eb105dec021987b4f8c25743b68e349}\label{config_8c_a5eb105dec021987b4f8c25743b68e349}} 
+\index{config.c@{config.c}!CONFIG\_OP\_RESET@{CONFIG\_OP\_RESET}}
+\index{CONFIG\_OP\_RESET@{CONFIG\_OP\_RESET}!config.c@{config.c}}
+\doxysubsubsection{\texorpdfstring{CONFIG\_OP\_RESET}{CONFIG\_OP\_RESET}}
+{\footnotesize\ttfamily \#define C\+O\+N\+F\+I\+G\+\_\+\+O\+P\+\_\+\+R\+E\+S\+ET~0x7}
+
+\mbox{\Hypertarget{config_8c_ab2df94e66d170d3f40cbb0403549002f}\label{config_8c_ab2df94e66d170d3f40cbb0403549002f}} 
+\index{config.c@{config.c}!CONFIG\_OP\_SUB\_ADD@{CONFIG\_OP\_SUB\_ADD}}
+\index{CONFIG\_OP\_SUB\_ADD@{CONFIG\_OP\_SUB\_ADD}!config.c@{config.c}}
+\doxysubsubsection{\texorpdfstring{CONFIG\_OP\_SUB\_ADD}{CONFIG\_OP\_SUB\_ADD}}
+{\footnotesize\ttfamily \#define C\+O\+N\+F\+I\+G\+\_\+\+O\+P\+\_\+\+S\+U\+B\+\_\+\+A\+DD~0x1}
+
+\mbox{\Hypertarget{config_8c_aeef5b7e31c367baea89d93647fe1c3a1}\label{config_8c_aeef5b7e31c367baea89d93647fe1c3a1}} 
+\index{config.c@{config.c}!CONFIG\_OP\_SUB\_DEL@{CONFIG\_OP\_SUB\_DEL}}
+\index{CONFIG\_OP\_SUB\_DEL@{CONFIG\_OP\_SUB\_DEL}!config.c@{config.c}}
+\doxysubsubsection{\texorpdfstring{CONFIG\_OP\_SUB\_DEL}{CONFIG\_OP\_SUB\_DEL}}
+{\footnotesize\ttfamily \#define C\+O\+N\+F\+I\+G\+\_\+\+O\+P\+\_\+\+S\+U\+B\+\_\+\+D\+EL~0x6}
+
+\mbox{\Hypertarget{config_8c_abe03d152567382444227b77bf22bbd85}\label{config_8c_abe03d152567382444227b77bf22bbd85}} 
+\index{config.c@{config.c}!MAX\_CONFIG\_QUEUE@{MAX\_CONFIG\_QUEUE}}
+\index{MAX\_CONFIG\_QUEUE@{MAX\_CONFIG\_QUEUE}!config.c@{config.c}}
+\doxysubsubsection{\texorpdfstring{MAX\_CONFIG\_QUEUE}{MAX\_CONFIG\_QUEUE}}
+{\footnotesize\ttfamily \#define M\+A\+X\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+Q\+U\+E\+UE~7}
+
+\mbox{\Hypertarget{config_8c_afc3d101f633a076cc1ca84b85b6224b2}\label{config_8c_afc3d101f633a076cc1ca84b85b6224b2}} 
+\index{config.c@{config.c}!TAG@{TAG}}
+\index{TAG@{TAG}!config.c@{config.c}}
+\doxysubsubsection{\texorpdfstring{TAG}{TAG}}
+{\footnotesize\ttfamily \#define T\+AG~\char`\"{}mesh\+\_\+config\char`\"{}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{config_8c_a85626c6daaaf051e6a36dacb16121086}\label{config_8c_a85626c6daaaf051e6a36dacb16121086}} 
+\index{config.c@{config.c}!\_config\_app\_key\_add@{\_config\_app\_key\_add}}
+\index{\_config\_app\_key\_add@{\_config\_app\_key\_add}!config.c@{config.c}}
+\doxysubsubsection{\texorpdfstring{\_config\_app\_key\_add()}{\_config\_app\_key\_add()}}
+{\footnotesize\ttfamily esp\+\_\+err\+\_\+t \+\_\+config\+\_\+app\+\_\+key\+\_\+add (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{addr }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{config_8c_a6aac54db6fd40f1accfaa519705ac431}\label{config_8c_a6aac54db6fd40f1accfaa519705ac431}} 
+\index{config.c@{config.c}!\_config\_comp\_data\_get@{\_config\_comp\_data\_get}}
+\index{\_config\_comp\_data\_get@{\_config\_comp\_data\_get}!config.c@{config.c}}
+\doxysubsubsection{\texorpdfstring{\_config\_comp\_data\_get()}{\_config\_comp\_data\_get()}}
+{\footnotesize\ttfamily esp\+\_\+err\+\_\+t \+\_\+config\+\_\+comp\+\_\+data\+\_\+get (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{addr }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{config_8c_a8bfe5d3ba0c9bc3276648a637673be78}\label{config_8c_a8bfe5d3ba0c9bc3276648a637673be78}} 
+\index{config.c@{config.c}!\_config\_model\_app\_bind@{\_config\_model\_app\_bind}}
+\index{\_config\_model\_app\_bind@{\_config\_model\_app\_bind}!config.c@{config.c}}
+\doxysubsubsection{\texorpdfstring{\_config\_model\_app\_bind()}{\_config\_model\_app\_bind()}}
+{\footnotesize\ttfamily esp\+\_\+err\+\_\+t \+\_\+config\+\_\+model\+\_\+app\+\_\+bind (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{addr,  }\item[{uint16\+\_\+t}]{model\+\_\+id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{config_8c_ad7e9330c173e97c7b222e14323282aa6}\label{config_8c_ad7e9330c173e97c7b222e14323282aa6}} 
+\index{config.c@{config.c}!\_config\_pub\_set@{\_config\_pub\_set}}
+\index{\_config\_pub\_set@{\_config\_pub\_set}!config.c@{config.c}}
+\doxysubsubsection{\texorpdfstring{\_config\_pub\_set()}{\_config\_pub\_set()}}
+{\footnotesize\ttfamily esp\+\_\+err\+\_\+t \+\_\+config\+\_\+pub\+\_\+set (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{addr,  }\item[{uint16\+\_\+t}]{publish\+\_\+addr,  }\item[{uint16\+\_\+t}]{model\+\_\+id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{config_8c_ae63c5ddb5ff9941d7ba24f6915485e90}\label{config_8c_ae63c5ddb5ff9941d7ba24f6915485e90}} 
+\index{config.c@{config.c}!\_config\_reset@{\_config\_reset}}
+\index{\_config\_reset@{\_config\_reset}!config.c@{config.c}}
+\doxysubsubsection{\texorpdfstring{\_config\_reset()}{\_config\_reset()}}
+{\footnotesize\ttfamily esp\+\_\+err\+\_\+t \+\_\+config\+\_\+reset (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{addr }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{config_8c_a748a8e731b87381bc0273226cc8abd65}\label{config_8c_a748a8e731b87381bc0273226cc8abd65}} 
+\index{config.c@{config.c}!\_config\_sub\_add@{\_config\_sub\_add}}
+\index{\_config\_sub\_add@{\_config\_sub\_add}!config.c@{config.c}}
+\doxysubsubsection{\texorpdfstring{\_config\_sub\_add()}{\_config\_sub\_add()}}
+{\footnotesize\ttfamily esp\+\_\+err\+\_\+t \+\_\+config\+\_\+sub\+\_\+add (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{addr,  }\item[{uint16\+\_\+t}]{sub\+\_\+addr,  }\item[{uint16\+\_\+t}]{model\+\_\+id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{config_8c_a3f938eede225af45573db87254ee3654}\label{config_8c_a3f938eede225af45573db87254ee3654}} 
+\index{config.c@{config.c}!\_config\_sub\_delete@{\_config\_sub\_delete}}
+\index{\_config\_sub\_delete@{\_config\_sub\_delete}!config.c@{config.c}}
+\doxysubsubsection{\texorpdfstring{\_config\_sub\_delete()}{\_config\_sub\_delete()}}
+{\footnotesize\ttfamily esp\+\_\+err\+\_\+t \+\_\+config\+\_\+sub\+\_\+delete (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{addr,  }\item[{uint16\+\_\+t}]{model\+\_\+id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{config_8c_a1c6787d8958cdfbc27fc21544728dd70}\label{config_8c_a1c6787d8958cdfbc27fc21544728dd70}} 
+\index{config.c@{config.c}!config\_app\_key\_add@{config\_app\_key\_add}}
+\index{config\_app\_key\_add@{config\_app\_key\_add}!config.c@{config.c}}
+\doxysubsubsection{\texorpdfstring{config\_app\_key\_add()}{config\_app\_key\_add()}}
+{\footnotesize\ttfamily void config\+\_\+app\+\_\+key\+\_\+add (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{addr }\end{DoxyParamCaption})}
+
+Add a command to the queue to add an application key to the device 
+\begin{DoxyParams}{Parameters}
+{\em addr} & Address of the device to configure \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{config_8c_a6f183ebbc64bea4c4243b854b28eeb69}\label{config_8c_a6f183ebbc64bea4c4243b854b28eeb69}} 
+\index{config.c@{config.c}!config\_client\_cb@{config\_client\_cb}}
+\index{config\_client\_cb@{config\_client\_cb}!config.c@{config.c}}
+\doxysubsubsection{\texorpdfstring{config\_client\_cb()}{config\_client\_cb()}}
+{\footnotesize\ttfamily void config\+\_\+client\+\_\+cb (\begin{DoxyParamCaption}\item[{esp\+\_\+ble\+\_\+mesh\+\_\+cfg\+\_\+client\+\_\+cb\+\_\+event\+\_\+t}]{event,  }\item[{esp\+\_\+ble\+\_\+mesh\+\_\+cfg\+\_\+client\+\_\+cb\+\_\+param\+\_\+t $\ast$}]{param }\end{DoxyParamCaption})}
+
+Callback function to handle configuration client events \mbox{\Hypertarget{config_8c_a61b0aeec560e1aa0c7bb0a53b279c382}\label{config_8c_a61b0aeec560e1aa0c7bb0a53b279c382}} 
+\index{config.c@{config.c}!config\_comp\_data\_get@{config\_comp\_data\_get}}
+\index{config\_comp\_data\_get@{config\_comp\_data\_get}!config.c@{config.c}}
+\doxysubsubsection{\texorpdfstring{config\_comp\_data\_get()}{config\_comp\_data\_get()}}
+{\footnotesize\ttfamily void config\+\_\+comp\+\_\+data\+\_\+get (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{addr }\end{DoxyParamCaption})}
+
+Add a command to the queue to get the composition data 
+\begin{DoxyParams}{Parameters}
+{\em addr} & Address of the device to configure \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{config_8c_aa1d3b38b1da7f1a7f57c4a583ad1fdb1}\label{config_8c_aa1d3b38b1da7f1a7f57c4a583ad1fdb1}} 
+\index{config.c@{config.c}!config\_init@{config\_init}}
+\index{config\_init@{config\_init}!config.c@{config.c}}
+\doxysubsubsection{\texorpdfstring{config\_init()}{config\_init()}}
+{\footnotesize\ttfamily void config\+\_\+init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Initialize the required resources for the configuration client. \mbox{\Hypertarget{config_8c_a3fe2786bcc218e661f12c550b1e73137}\label{config_8c_a3fe2786bcc218e661f12c550b1e73137}} 
+\index{config.c@{config.c}!config\_model\_app\_bind@{config\_model\_app\_bind}}
+\index{config\_model\_app\_bind@{config\_model\_app\_bind}!config.c@{config.c}}
+\doxysubsubsection{\texorpdfstring{config\_model\_app\_bind()}{config\_model\_app\_bind()}}
+{\footnotesize\ttfamily void config\+\_\+model\+\_\+app\+\_\+bind (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{addr,  }\item[{uint16\+\_\+t}]{model\+\_\+id }\end{DoxyParamCaption})}
+
+Add a command to the queue to bind an application key to a model 
+\begin{DoxyParams}{Parameters}
+{\em addr} & Address of the device to configure \\
+\hline
+{\em model\+\_\+id} & Model to bind the key to \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{config_8c_a400e20f69f6b63d623d667bc76e2847e}\label{config_8c_a400e20f69f6b63d623d667bc76e2847e}} 
+\index{config.c@{config.c}!config\_pub\_set@{config\_pub\_set}}
+\index{config\_pub\_set@{config\_pub\_set}!config.c@{config.c}}
+\doxysubsubsection{\texorpdfstring{config\_pub\_set()}{config\_pub\_set()}}
+{\footnotesize\ttfamily void config\+\_\+pub\+\_\+set (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{addr,  }\item[{uint16\+\_\+t}]{publish\+\_\+addr,  }\item[{uint16\+\_\+t}]{model\+\_\+id }\end{DoxyParamCaption})}
+
+Add a command to the queue to set the publication address of a device 
+\begin{DoxyParams}{Parameters}
+{\em addr} & Address of the device to configure \\
+\hline
+{\em publish\+\_\+addr} & Publish address to set for the model \\
+\hline
+{\em model\+\_\+id} & The model to configure \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{config_8c_acfd58f7ff73c835c3c3a770f6f3871e8}\label{config_8c_acfd58f7ff73c835c3c3a770f6f3871e8}} 
+\index{config.c@{config.c}!config\_reset@{config\_reset}}
+\index{config\_reset@{config\_reset}!config.c@{config.c}}
+\doxysubsubsection{\texorpdfstring{config\_reset()}{config\_reset()}}
+{\footnotesize\ttfamily void config\+\_\+reset (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{addr }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{config_8c_aeabd0a1e7abcd547ef8bee4e45044ed9}\label{config_8c_aeabd0a1e7abcd547ef8bee4e45044ed9}} 
+\index{config.c@{config.c}!config\_sub\_add@{config\_sub\_add}}
+\index{config\_sub\_add@{config\_sub\_add}!config.c@{config.c}}
+\doxysubsubsection{\texorpdfstring{config\_sub\_add()}{config\_sub\_add()}}
+{\footnotesize\ttfamily void config\+\_\+sub\+\_\+add (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{addr,  }\item[{uint16\+\_\+t}]{sub\+\_\+addr,  }\item[{uint16\+\_\+t}]{model\+\_\+id }\end{DoxyParamCaption})}
+
+Add a command to the queue to add a subscription address of a device 
+\begin{DoxyParams}{Parameters}
+{\em addr} & Address of the device to configure \\
+\hline
+{\em sub\+\_\+addr} & Subscription address to set for the model \\
+\hline
+{\em model\+\_\+id} & The model to configure \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{config_8c_afafedba99339f9fc75eaf6bf4bfef2cd}\label{config_8c_afafedba99339f9fc75eaf6bf4bfef2cd}} 
+\index{config.c@{config.c}!config\_sub\_delete@{config\_sub\_delete}}
+\index{config\_sub\_delete@{config\_sub\_delete}!config.c@{config.c}}
+\doxysubsubsection{\texorpdfstring{config\_sub\_delete()}{config\_sub\_delete()}}
+{\footnotesize\ttfamily void config\+\_\+sub\+\_\+delete (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{addr,  }\item[{uint16\+\_\+t}]{model\+\_\+id }\end{DoxyParamCaption})}
+
+Add a command to the queue to delete all subscriptions for a model 
+\begin{DoxyParams}{Parameters}
+{\em addr} & Address of the device to configure \\
+\hline
+{\em model\+\_\+id} & The model to configure \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{config_8c_ad593cc6ea5acc31a8bc625caa6caee2e}\label{config_8c_ad593cc6ea5acc31a8bc625caa6caee2e}} 
+\index{config.c@{config.c}!config\_task@{config\_task}}
+\index{config\_task@{config\_task}!config.c@{config.c}}
+\doxysubsubsection{\texorpdfstring{config\_task()}{config\_task()}}
+{\footnotesize\ttfamily void config\+\_\+task (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{config_8c_add0b80bb1d0234ea2b50d86cc0e8e930}\label{config_8c_add0b80bb1d0234ea2b50d86cc0e8e930}} 
+\index{config.c@{config.c}!new\_param@{new\_param}}
+\index{new\_param@{new\_param}!config.c@{config.c}}
+\doxysubsubsection{\texorpdfstring{new\_param()}{new\_param()}}
+{\footnotesize\ttfamily esp\+\_\+ble\+\_\+mesh\+\_\+client\+\_\+common\+\_\+param\+\_\+t new\+\_\+param (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{config_8c_a30dbbe3548a569d0b17d6f5cba317e90}\label{config_8c_a30dbbe3548a569d0b17d6f5cba317e90}} 
+\index{config.c@{config.c}!config\_client@{config\_client}}
+\index{config\_client@{config\_client}!config.c@{config.c}}
+\doxysubsubsection{\texorpdfstring{config\_client}{config\_client}}
+{\footnotesize\ttfamily esp\+\_\+ble\+\_\+mesh\+\_\+client\+\_\+t config\+\_\+client}
+
+\mbox{\Hypertarget{config_8c_a977f7cb0d17dd554afbb04d5b6cf59e2}\label{config_8c_a977f7cb0d17dd554afbb04d5b6cf59e2}} 
+\index{config.c@{config.c}!config\_queue@{config\_queue}}
+\index{config\_queue@{config\_queue}!config.c@{config.c}}
+\doxysubsubsection{\texorpdfstring{config\_queue}{config\_queue}}
+{\footnotesize\ttfamily Queue\+Handle\+\_\+t config\+\_\+queue}
+
+\mbox{\Hypertarget{config_8c_a969ceb20856892393e13fb8411485ab1}\label{config_8c_a969ceb20856892393e13fb8411485ab1}} 
+\index{config.c@{config.c}!config\_sem@{config\_sem}}
+\index{config\_sem@{config\_sem}!config.c@{config.c}}
+\doxysubsubsection{\texorpdfstring{config\_sem}{config\_sem}}
+{\footnotesize\ttfamily Semaphore\+Handle\+\_\+t config\+\_\+sem}
+
+\mbox{\Hypertarget{config_8c_afae6ebd19d3b5668aa9313c191c6096f}\label{config_8c_afae6ebd19d3b5668aa9313c191c6096f}} 
+\index{config.c@{config.c}!prov\_key@{prov\_key}}
+\index{prov\_key@{prov\_key}!config.c@{config.c}}
+\doxysubsubsection{\texorpdfstring{prov\_key}{prov\_key}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structesp__ble__mesh__key}{esp\+\_\+ble\+\_\+mesh\+\_\+key}} prov\+\_\+key}
+

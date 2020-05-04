@@ -48,7 +48,7 @@ env:
 
 .PHONY: docker
 docker:
-	docker stop $(CONTAINER)
+	-docker stop $(CONTAINER)
 	docker build -t $(IMAGE) -f Dockerfile .
 	$(docker_start)
 

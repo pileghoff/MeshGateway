@@ -1,0 +1,175 @@
+\hypertarget{config_8h}{}\doxysection{/home/pil/\+Projects/\+Mesh\+Gateway/src/components/gateway/include/config.h File Reference}
+\label{config_8h}\index{/home/pil/Projects/MeshGateway/src/components/gateway/include/config.h@{/home/pil/Projects/MeshGateway/src/components/gateway/include/config.h}}
+{\ttfamily \#include \char`\"{}esp\+\_\+bt.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+bt\+\_\+main.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+bt\+\_\+device.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+ble\+\_\+mesh\+\_\+defs.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+ble\+\_\+mesh\+\_\+common\+\_\+api.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+ble\+\_\+mesh\+\_\+provisioning\+\_\+api.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+ble\+\_\+mesh\+\_\+networking\+\_\+api.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+ble\+\_\+mesh\+\_\+config\+\_\+model\+\_\+api.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+ble\+\_\+mesh\+\_\+generic\+\_\+model\+\_\+api.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}common.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{config_8h_a6f183ebbc64bea4c4243b854b28eeb69}{config\+\_\+client\+\_\+cb}} (esp\+\_\+ble\+\_\+mesh\+\_\+cfg\+\_\+client\+\_\+cb\+\_\+event\+\_\+t event, esp\+\_\+ble\+\_\+mesh\+\_\+cfg\+\_\+client\+\_\+cb\+\_\+param\+\_\+t $\ast$param)
+\item 
+void \mbox{\hyperlink{config_8h_aa1d3b38b1da7f1a7f57c4a583ad1fdb1}{config\+\_\+init}} ()
+\item 
+void \mbox{\hyperlink{config_8h_a400e20f69f6b63d623d667bc76e2847e}{config\+\_\+pub\+\_\+set}} (uint16\+\_\+t addr, uint16\+\_\+t publish\+\_\+addr, uint16\+\_\+t model\+\_\+id)
+\item 
+void \mbox{\hyperlink{config_8h_aeabd0a1e7abcd547ef8bee4e45044ed9}{config\+\_\+sub\+\_\+add}} (uint16\+\_\+t addr, uint16\+\_\+t sub\+\_\+addr, uint16\+\_\+t model\+\_\+id)
+\item 
+void \mbox{\hyperlink{config_8h_afafedba99339f9fc75eaf6bf4bfef2cd}{config\+\_\+sub\+\_\+delete}} (uint16\+\_\+t addr, uint16\+\_\+t model\+\_\+id)
+\item 
+void \mbox{\hyperlink{config_8h_a61b0aeec560e1aa0c7bb0a53b279c382}{config\+\_\+comp\+\_\+data\+\_\+get}} (uint16\+\_\+t addr)
+\item 
+void \mbox{\hyperlink{config_8h_a1c6787d8958cdfbc27fc21544728dd70}{config\+\_\+app\+\_\+key\+\_\+add}} (uint16\+\_\+t addr)
+\item 
+void \mbox{\hyperlink{config_8h_a3fe2786bcc218e661f12c550b1e73137}{config\+\_\+model\+\_\+app\+\_\+bind}} (uint16\+\_\+t addr, uint16\+\_\+t model\+\_\+id)
+\item 
+void \mbox{\hyperlink{config_8h_acfd58f7ff73c835c3c3a770f6f3871e8}{config\+\_\+reset}} (uint16\+\_\+t addr)
+\item 
+esp\+\_\+ble\+\_\+mesh\+\_\+client\+\_\+common\+\_\+param\+\_\+t \mbox{\hyperlink{config_8h_add0b80bb1d0234ea2b50d86cc0e8e930}{new\+\_\+param}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+esp\+\_\+ble\+\_\+mesh\+\_\+client\+\_\+t \mbox{\hyperlink{config_8h_a30dbbe3548a569d0b17d6f5cba317e90}{config\+\_\+client}}
+\item 
+esp\+\_\+ble\+\_\+mesh\+\_\+client\+\_\+common\+\_\+param\+\_\+t \mbox{\hyperlink{config_8h_af36a8903ddb3ac6d723386bb38e40597}{c\+\_\+common}}
+\item 
+esp\+\_\+ble\+\_\+mesh\+\_\+client\+\_\+t \mbox{\hyperlink{config_8h_a21180bbaa0d1d03a040a98bb4d613091}{onoff\+\_\+client}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This module handles the configuration client for B\+LE Mesh
+
+It uses a queue where commands are added as they appear. This queue is then consumed by a single task, to make sure new commands are not send before the response to a previous has been received. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{config_8h_a1c6787d8958cdfbc27fc21544728dd70}\label{config_8h_a1c6787d8958cdfbc27fc21544728dd70}} 
+\index{config.h@{config.h}!config\_app\_key\_add@{config\_app\_key\_add}}
+\index{config\_app\_key\_add@{config\_app\_key\_add}!config.h@{config.h}}
+\doxysubsubsection{\texorpdfstring{config\_app\_key\_add()}{config\_app\_key\_add()}}
+{\footnotesize\ttfamily void config\+\_\+app\+\_\+key\+\_\+add (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{addr }\end{DoxyParamCaption})}
+
+Add a command to the queue to add an application key to the device 
+\begin{DoxyParams}{Parameters}
+{\em addr} & Address of the device to configure \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{config_8h_a6f183ebbc64bea4c4243b854b28eeb69}\label{config_8h_a6f183ebbc64bea4c4243b854b28eeb69}} 
+\index{config.h@{config.h}!config\_client\_cb@{config\_client\_cb}}
+\index{config\_client\_cb@{config\_client\_cb}!config.h@{config.h}}
+\doxysubsubsection{\texorpdfstring{config\_client\_cb()}{config\_client\_cb()}}
+{\footnotesize\ttfamily void config\+\_\+client\+\_\+cb (\begin{DoxyParamCaption}\item[{esp\+\_\+ble\+\_\+mesh\+\_\+cfg\+\_\+client\+\_\+cb\+\_\+event\+\_\+t}]{event,  }\item[{esp\+\_\+ble\+\_\+mesh\+\_\+cfg\+\_\+client\+\_\+cb\+\_\+param\+\_\+t $\ast$}]{param }\end{DoxyParamCaption})}
+
+Callback function to handle configuration client events \mbox{\Hypertarget{config_8h_a61b0aeec560e1aa0c7bb0a53b279c382}\label{config_8h_a61b0aeec560e1aa0c7bb0a53b279c382}} 
+\index{config.h@{config.h}!config\_comp\_data\_get@{config\_comp\_data\_get}}
+\index{config\_comp\_data\_get@{config\_comp\_data\_get}!config.h@{config.h}}
+\doxysubsubsection{\texorpdfstring{config\_comp\_data\_get()}{config\_comp\_data\_get()}}
+{\footnotesize\ttfamily void config\+\_\+comp\+\_\+data\+\_\+get (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{addr }\end{DoxyParamCaption})}
+
+Add a command to the queue to get the composition data 
+\begin{DoxyParams}{Parameters}
+{\em addr} & Address of the device to configure \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{config_8h_aa1d3b38b1da7f1a7f57c4a583ad1fdb1}\label{config_8h_aa1d3b38b1da7f1a7f57c4a583ad1fdb1}} 
+\index{config.h@{config.h}!config\_init@{config\_init}}
+\index{config\_init@{config\_init}!config.h@{config.h}}
+\doxysubsubsection{\texorpdfstring{config\_init()}{config\_init()}}
+{\footnotesize\ttfamily void config\+\_\+init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Initialize the required resources for the configuration client. \mbox{\Hypertarget{config_8h_a3fe2786bcc218e661f12c550b1e73137}\label{config_8h_a3fe2786bcc218e661f12c550b1e73137}} 
+\index{config.h@{config.h}!config\_model\_app\_bind@{config\_model\_app\_bind}}
+\index{config\_model\_app\_bind@{config\_model\_app\_bind}!config.h@{config.h}}
+\doxysubsubsection{\texorpdfstring{config\_model\_app\_bind()}{config\_model\_app\_bind()}}
+{\footnotesize\ttfamily void config\+\_\+model\+\_\+app\+\_\+bind (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{addr,  }\item[{uint16\+\_\+t}]{model\+\_\+id }\end{DoxyParamCaption})}
+
+Add a command to the queue to bind an application key to a model 
+\begin{DoxyParams}{Parameters}
+{\em addr} & Address of the device to configure \\
+\hline
+{\em model\+\_\+id} & Model to bind the key to \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{config_8h_a400e20f69f6b63d623d667bc76e2847e}\label{config_8h_a400e20f69f6b63d623d667bc76e2847e}} 
+\index{config.h@{config.h}!config\_pub\_set@{config\_pub\_set}}
+\index{config\_pub\_set@{config\_pub\_set}!config.h@{config.h}}
+\doxysubsubsection{\texorpdfstring{config\_pub\_set()}{config\_pub\_set()}}
+{\footnotesize\ttfamily void config\+\_\+pub\+\_\+set (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{addr,  }\item[{uint16\+\_\+t}]{publish\+\_\+addr,  }\item[{uint16\+\_\+t}]{model\+\_\+id }\end{DoxyParamCaption})}
+
+Add a command to the queue to set the publication address of a device 
+\begin{DoxyParams}{Parameters}
+{\em addr} & Address of the device to configure \\
+\hline
+{\em publish\+\_\+addr} & Publish address to set for the model \\
+\hline
+{\em model\+\_\+id} & The model to configure \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{config_8h_acfd58f7ff73c835c3c3a770f6f3871e8}\label{config_8h_acfd58f7ff73c835c3c3a770f6f3871e8}} 
+\index{config.h@{config.h}!config\_reset@{config\_reset}}
+\index{config\_reset@{config\_reset}!config.h@{config.h}}
+\doxysubsubsection{\texorpdfstring{config\_reset()}{config\_reset()}}
+{\footnotesize\ttfamily void config\+\_\+reset (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{addr }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{config_8h_aeabd0a1e7abcd547ef8bee4e45044ed9}\label{config_8h_aeabd0a1e7abcd547ef8bee4e45044ed9}} 
+\index{config.h@{config.h}!config\_sub\_add@{config\_sub\_add}}
+\index{config\_sub\_add@{config\_sub\_add}!config.h@{config.h}}
+\doxysubsubsection{\texorpdfstring{config\_sub\_add()}{config\_sub\_add()}}
+{\footnotesize\ttfamily void config\+\_\+sub\+\_\+add (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{addr,  }\item[{uint16\+\_\+t}]{sub\+\_\+addr,  }\item[{uint16\+\_\+t}]{model\+\_\+id }\end{DoxyParamCaption})}
+
+Add a command to the queue to add a subscription address of a device 
+\begin{DoxyParams}{Parameters}
+{\em addr} & Address of the device to configure \\
+\hline
+{\em sub\+\_\+addr} & Subscription address to set for the model \\
+\hline
+{\em model\+\_\+id} & The model to configure \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{config_8h_afafedba99339f9fc75eaf6bf4bfef2cd}\label{config_8h_afafedba99339f9fc75eaf6bf4bfef2cd}} 
+\index{config.h@{config.h}!config\_sub\_delete@{config\_sub\_delete}}
+\index{config\_sub\_delete@{config\_sub\_delete}!config.h@{config.h}}
+\doxysubsubsection{\texorpdfstring{config\_sub\_delete()}{config\_sub\_delete()}}
+{\footnotesize\ttfamily void config\+\_\+sub\+\_\+delete (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{addr,  }\item[{uint16\+\_\+t}]{model\+\_\+id }\end{DoxyParamCaption})}
+
+Add a command to the queue to delete all subscriptions for a model 
+\begin{DoxyParams}{Parameters}
+{\em addr} & Address of the device to configure \\
+\hline
+{\em model\+\_\+id} & The model to configure \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{config_8h_add0b80bb1d0234ea2b50d86cc0e8e930}\label{config_8h_add0b80bb1d0234ea2b50d86cc0e8e930}} 
+\index{config.h@{config.h}!new\_param@{new\_param}}
+\index{new\_param@{new\_param}!config.h@{config.h}}
+\doxysubsubsection{\texorpdfstring{new\_param()}{new\_param()}}
+{\footnotesize\ttfamily esp\+\_\+ble\+\_\+mesh\+\_\+client\+\_\+common\+\_\+param\+\_\+t new\+\_\+param (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{config_8h_af36a8903ddb3ac6d723386bb38e40597}\label{config_8h_af36a8903ddb3ac6d723386bb38e40597}} 
+\index{config.h@{config.h}!c\_common@{c\_common}}
+\index{c\_common@{c\_common}!config.h@{config.h}}
+\doxysubsubsection{\texorpdfstring{c\_common}{c\_common}}
+{\footnotesize\ttfamily esp\+\_\+ble\+\_\+mesh\+\_\+client\+\_\+common\+\_\+param\+\_\+t c\+\_\+common}
+
+\mbox{\Hypertarget{config_8h_a30dbbe3548a569d0b17d6f5cba317e90}\label{config_8h_a30dbbe3548a569d0b17d6f5cba317e90}} 
+\index{config.h@{config.h}!config\_client@{config\_client}}
+\index{config\_client@{config\_client}!config.h@{config.h}}
+\doxysubsubsection{\texorpdfstring{config\_client}{config\_client}}
+{\footnotesize\ttfamily esp\+\_\+ble\+\_\+mesh\+\_\+client\+\_\+t config\+\_\+client}
+
+\mbox{\Hypertarget{config_8h_a21180bbaa0d1d03a040a98bb4d613091}\label{config_8h_a21180bbaa0d1d03a040a98bb4d613091}} 
+\index{config.h@{config.h}!onoff\_client@{onoff\_client}}
+\index{onoff\_client@{onoff\_client}!config.h@{config.h}}
+\doxysubsubsection{\texorpdfstring{onoff\_client}{onoff\_client}}
+{\footnotesize\ttfamily esp\+\_\+ble\+\_\+mesh\+\_\+client\+\_\+t onoff\+\_\+client}
+

@@ -1,0 +1,66 @@
+\hypertarget{uuid__list_8h}{}\doxysection{/home/pil/\+Projects/\+Mesh\+Gateway/src/components/gateway/include/uuid\+\_\+list.h File Reference}
+\label{uuid__list_8h}\index{/home/pil/Projects/MeshGateway/src/components/gateway/include/uuid\_list.h@{/home/pil/Projects/MeshGateway/src/components/gateway/include/uuid\_list.h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+ble\+\_\+mesh\+\_\+defs.\+h\char`\"{}}\newline
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef esp\+\_\+ble\+\_\+mesh\+\_\+unprov\+\_\+dev\+\_\+add\+\_\+t \mbox{\hyperlink{uuid__list_8h_a20b022995cc4fd558e8061d52388a536}{unprov\+\_\+dev\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{uuid__list_8h_a3a71ec86a1a8c50458d452f28fe516f4}{uuid\+\_\+add}} (\mbox{\hyperlink{uuid__list_8h_a20b022995cc4fd558e8061d52388a536}{unprov\+\_\+dev\+\_\+t}} $\ast$dev)
+\item 
+\mbox{\hyperlink{uuid__list_8h_a20b022995cc4fd558e8061d52388a536}{unprov\+\_\+dev\+\_\+t}} $\ast$ \mbox{\hyperlink{uuid__list_8h_a7203e8de6c45f3ff0a04f0e48ed8a5f2}{uuid\+\_\+find}} (uint8\+\_\+t uuid\mbox{[}16\mbox{]})
+\item 
+int \mbox{\hyperlink{uuid__list_8h_a205e8e337d0e44c61516b5e20529bb29}{uuid\+\_\+remove}} (uint8\+\_\+t uuid\mbox{[}16\mbox{]})
+\item 
+int \mbox{\hyperlink{uuid__list_8h_ad6d5d952aaf7c894e3b4a036bedfc6a9}{uuid\+\_\+is\+\_\+reset}} (uint8\+\_\+t uuid\mbox{[}16\mbox{]})
+\item 
+int \mbox{\hyperlink{uuid__list_8h_ad0988b519e07702ccdca763697061766}{uuid\+\_\+reset}} (uint8\+\_\+t uuid\mbox{[}16\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{uuid__list_8h_a20b022995cc4fd558e8061d52388a536}\label{uuid__list_8h_a20b022995cc4fd558e8061d52388a536}} 
+\index{uuid\_list.h@{uuid\_list.h}!unprov\_dev\_t@{unprov\_dev\_t}}
+\index{unprov\_dev\_t@{unprov\_dev\_t}!uuid\_list.h@{uuid\_list.h}}
+\doxysubsubsection{\texorpdfstring{unprov\_dev\_t}{unprov\_dev\_t}}
+{\footnotesize\ttfamily typedef esp\+\_\+ble\+\_\+mesh\+\_\+unprov\+\_\+dev\+\_\+add\+\_\+t \mbox{\hyperlink{uuid__list_8h_a20b022995cc4fd558e8061d52388a536}{unprov\+\_\+dev\+\_\+t}}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{uuid__list_8h_a3a71ec86a1a8c50458d452f28fe516f4}\label{uuid__list_8h_a3a71ec86a1a8c50458d452f28fe516f4}} 
+\index{uuid\_list.h@{uuid\_list.h}!uuid\_add@{uuid\_add}}
+\index{uuid\_add@{uuid\_add}!uuid\_list.h@{uuid\_list.h}}
+\doxysubsubsection{\texorpdfstring{uuid\_add()}{uuid\_add()}}
+{\footnotesize\ttfamily int uuid\+\_\+add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{uuid__list_8h_a20b022995cc4fd558e8061d52388a536}{unprov\+\_\+dev\+\_\+t}} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{uuid__list_8h_a7203e8de6c45f3ff0a04f0e48ed8a5f2}\label{uuid__list_8h_a7203e8de6c45f3ff0a04f0e48ed8a5f2}} 
+\index{uuid\_list.h@{uuid\_list.h}!uuid\_find@{uuid\_find}}
+\index{uuid\_find@{uuid\_find}!uuid\_list.h@{uuid\_list.h}}
+\doxysubsubsection{\texorpdfstring{uuid\_find()}{uuid\_find()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{uuid__list_8h_a20b022995cc4fd558e8061d52388a536}{unprov\+\_\+dev\+\_\+t}}$\ast$ uuid\+\_\+find (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{uuid\mbox{[}16\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{uuid__list_8h_ad6d5d952aaf7c894e3b4a036bedfc6a9}\label{uuid__list_8h_ad6d5d952aaf7c894e3b4a036bedfc6a9}} 
+\index{uuid\_list.h@{uuid\_list.h}!uuid\_is\_reset@{uuid\_is\_reset}}
+\index{uuid\_is\_reset@{uuid\_is\_reset}!uuid\_list.h@{uuid\_list.h}}
+\doxysubsubsection{\texorpdfstring{uuid\_is\_reset()}{uuid\_is\_reset()}}
+{\footnotesize\ttfamily int uuid\+\_\+is\+\_\+reset (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{uuid\mbox{[}16\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{uuid__list_8h_a205e8e337d0e44c61516b5e20529bb29}\label{uuid__list_8h_a205e8e337d0e44c61516b5e20529bb29}} 
+\index{uuid\_list.h@{uuid\_list.h}!uuid\_remove@{uuid\_remove}}
+\index{uuid\_remove@{uuid\_remove}!uuid\_list.h@{uuid\_list.h}}
+\doxysubsubsection{\texorpdfstring{uuid\_remove()}{uuid\_remove()}}
+{\footnotesize\ttfamily int uuid\+\_\+remove (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{uuid\mbox{[}16\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{uuid__list_8h_ad0988b519e07702ccdca763697061766}\label{uuid__list_8h_ad0988b519e07702ccdca763697061766}} 
+\index{uuid\_list.h@{uuid\_list.h}!uuid\_reset@{uuid\_reset}}
+\index{uuid\_reset@{uuid\_reset}!uuid\_list.h@{uuid\_list.h}}
+\doxysubsubsection{\texorpdfstring{uuid\_reset()}{uuid\_reset()}}
+{\footnotesize\ttfamily int uuid\+\_\+reset (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{uuid\mbox{[}16\mbox{]} }\end{DoxyParamCaption})}
+

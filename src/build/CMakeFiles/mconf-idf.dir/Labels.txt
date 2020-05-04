@@ -1,0 +1,13 @@
+# Target labels
+ mconf-idf
+# Source files and their labels
+/src/build/CMakeFiles/mconf-idf
+/src/build/CMakeFiles/mconf-idf.rule
+/src/build/CMakeFiles/mconf-idf-complete.rule
+/src/build/mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-install.rule
+/src/build/mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-mkdir.rule
+/src/build/mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-download.rule
+/src/build/mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-update.rule
+/src/build/mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-patch.rule
+/src/build/mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-configure.rule
+/src/build/mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-build.rule

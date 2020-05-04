@@ -1,0 +1,50 @@
+\hypertarget{board_8h}{}\doxysection{/home/pil/\+Projects/\+Mesh\+Gateway/src/components/gateway/include/board.h File Reference}
+\label{board_8h}\index{/home/pil/Projects/MeshGateway/src/components/gateway/include/board.h@{/home/pil/Projects/MeshGateway/src/components/gateway/include/board.h}}
+{\ttfamily \#include \char`\"{}esp\+\_\+ble\+\_\+mesh\+\_\+defs.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{board_8h_a3248d48d69b0b81361c492e8e1074520}{board\+\_\+boot}} ()
+\item 
+void \mbox{\hyperlink{board_8h_aa92be5f368f23505dbbe0834eea601e2}{board\+\_\+eth}} ()
+\item 
+void \mbox{\hyperlink{board_8h_a3483a4a050042908a3cb2c1d9756b978}{board\+\_\+mqtt}} ()
+\item 
+void \mbox{\hyperlink{board_8h_a53c4cc4e15e1ddb781f4872ed3ff0483}{board\+\_\+err}} (int err)
+\item 
+void \mbox{\hyperlink{board_8h_ad7d81512b0ce3a7214547801a3e41264}{board\+\_\+init}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{board_8h_a3248d48d69b0b81361c492e8e1074520}\label{board_8h_a3248d48d69b0b81361c492e8e1074520}} 
+\index{board.h@{board.h}!board\_boot@{board\_boot}}
+\index{board\_boot@{board\_boot}!board.h@{board.h}}
+\doxysubsubsection{\texorpdfstring{board\_boot()}{board\_boot()}}
+{\footnotesize\ttfamily void board\+\_\+boot (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Set L\+ED\textquotesingle{}s to indicate bard has successfully booted \mbox{\Hypertarget{board_8h_a53c4cc4e15e1ddb781f4872ed3ff0483}\label{board_8h_a53c4cc4e15e1ddb781f4872ed3ff0483}} 
+\index{board.h@{board.h}!board\_err@{board\_err}}
+\index{board\_err@{board\_err}!board.h@{board.h}}
+\doxysubsubsection{\texorpdfstring{board\_err()}{board\_err()}}
+{\footnotesize\ttfamily void board\+\_\+err (\begin{DoxyParamCaption}\item[{int}]{err }\end{DoxyParamCaption})}
+
+Indicate an error using the red L\+ED on the board. \mbox{\Hypertarget{board_8h_aa92be5f368f23505dbbe0834eea601e2}\label{board_8h_aa92be5f368f23505dbbe0834eea601e2}} 
+\index{board.h@{board.h}!board\_eth@{board\_eth}}
+\index{board\_eth@{board\_eth}!board.h@{board.h}}
+\doxysubsubsection{\texorpdfstring{board\_eth()}{board\_eth()}}
+{\footnotesize\ttfamily void board\+\_\+eth (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Make the network L\+ED blink, as ethernet is up. When M\+Q\+TT goes up aswell, the network L\+ED is solid. \mbox{\Hypertarget{board_8h_ad7d81512b0ce3a7214547801a3e41264}\label{board_8h_ad7d81512b0ce3a7214547801a3e41264}} 
+\index{board.h@{board.h}!board\_init@{board\_init}}
+\index{board\_init@{board\_init}!board.h@{board.h}}
+\doxysubsubsection{\texorpdfstring{board\_init()}{board\_init()}}
+{\footnotesize\ttfamily void board\+\_\+init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Initialize all G\+P\+IO\textquotesingle{}s and start the task that handles L\+ED blinking. \mbox{\Hypertarget{board_8h_a3483a4a050042908a3cb2c1d9756b978}\label{board_8h_a3483a4a050042908a3cb2c1d9756b978}} 
+\index{board.h@{board.h}!board\_mqtt@{board\_mqtt}}
+\index{board\_mqtt@{board\_mqtt}!board.h@{board.h}}
+\doxysubsubsection{\texorpdfstring{board\_mqtt()}{board\_mqtt()}}
+{\footnotesize\ttfamily void board\+\_\+mqtt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Make the network L\+ED light up. 

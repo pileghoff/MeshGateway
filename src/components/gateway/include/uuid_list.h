@@ -4,6 +4,7 @@
 #include "esp_ble_mesh_defs.h"
 
 typedef esp_ble_mesh_unprov_dev_add_t unprov_dev_t;
+
 // Returns 0 if item was added
 // Returns 1 if the item was already present
 // Returns -1 if the list was full

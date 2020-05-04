@@ -1,0 +1,49 @@
+\hypertarget{mqtt_8h}{}\doxysection{/home/pil/\+Projects/\+Mesh\+Gateway/src/components/gateway/include/mqtt.h File Reference}
+\label{mqtt_8h}\index{/home/pil/Projects/MeshGateway/src/components/gateway/include/mqtt.h@{/home/pil/Projects/MeshGateway/src/components/gateway/include/mqtt.h}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{mqtt_8h_a54af81e1b932530d1ae5af3fab821b6b}{mqtt\+\_\+send}} (char $\ast$topic, void $\ast$data, int len)
+\item 
+void \mbox{\hyperlink{mqtt_8h_aa055ac28a86c16dbd204b380f6304a3f}{mqtt\+\_\+sub}} (const char $\ast$topic)
+\item 
+void \mbox{\hyperlink{mqtt_8h_a750934ebf59d2bc836aa599f702c5fc8}{mqtt\+\_\+sub\+\_\+done}} ()
+\item 
+void \mbox{\hyperlink{mqtt_8h_a5c68a349b86fe6652c9516ee517d8f1c}{mqtt\+\_\+init}} ()
+\item 
+void \mbox{\hyperlink{mqtt_8h_a2855f260bccaef1e51f5d21a92781c25}{mqtt\+\_\+log}} (const char $\ast$message, int level)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{mqtt_8h_a5c68a349b86fe6652c9516ee517d8f1c}\label{mqtt_8h_a5c68a349b86fe6652c9516ee517d8f1c}} 
+\index{mqtt.h@{mqtt.h}!mqtt\_init@{mqtt\_init}}
+\index{mqtt\_init@{mqtt\_init}!mqtt.h@{mqtt.h}}
+\doxysubsubsection{\texorpdfstring{mqtt\_init()}{mqtt\_init()}}
+{\footnotesize\ttfamily void mqtt\+\_\+init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{mqtt_8h_a2855f260bccaef1e51f5d21a92781c25}\label{mqtt_8h_a2855f260bccaef1e51f5d21a92781c25}} 
+\index{mqtt.h@{mqtt.h}!mqtt\_log@{mqtt\_log}}
+\index{mqtt\_log@{mqtt\_log}!mqtt.h@{mqtt.h}}
+\doxysubsubsection{\texorpdfstring{mqtt\_log()}{mqtt\_log()}}
+{\footnotesize\ttfamily void mqtt\+\_\+log (\begin{DoxyParamCaption}\item[{const char $\ast$}]{message,  }\item[{int}]{level }\end{DoxyParamCaption})}
+
+Send a log message to the logging DB over M\+Q\+TT. \mbox{\Hypertarget{mqtt_8h_a54af81e1b932530d1ae5af3fab821b6b}\label{mqtt_8h_a54af81e1b932530d1ae5af3fab821b6b}} 
+\index{mqtt.h@{mqtt.h}!mqtt\_send@{mqtt\_send}}
+\index{mqtt\_send@{mqtt\_send}!mqtt.h@{mqtt.h}}
+\doxysubsubsection{\texorpdfstring{mqtt\_send()}{mqtt\_send()}}
+{\footnotesize\ttfamily void mqtt\+\_\+send (\begin{DoxyParamCaption}\item[{char $\ast$}]{topic,  }\item[{void $\ast$}]{data,  }\item[{int}]{len }\end{DoxyParamCaption})}
+
+Publish a M\+Q\+TT message. If M\+Q\+TT has not been started properly yet, sleep. \mbox{\Hypertarget{mqtt_8h_aa055ac28a86c16dbd204b380f6304a3f}\label{mqtt_8h_aa055ac28a86c16dbd204b380f6304a3f}} 
+\index{mqtt.h@{mqtt.h}!mqtt\_sub@{mqtt\_sub}}
+\index{mqtt\_sub@{mqtt\_sub}!mqtt.h@{mqtt.h}}
+\doxysubsubsection{\texorpdfstring{mqtt\_sub()}{mqtt\_sub()}}
+{\footnotesize\ttfamily void mqtt\+\_\+sub (\begin{DoxyParamCaption}\item[{const char $\ast$}]{topic }\end{DoxyParamCaption})}
+
+Subscribe to a M\+Q\+TT topic. If M\+Q\+TT has not been started properly yet, sleep. \mbox{\Hypertarget{mqtt_8h_a750934ebf59d2bc836aa599f702c5fc8}\label{mqtt_8h_a750934ebf59d2bc836aa599f702c5fc8}} 
+\index{mqtt.h@{mqtt.h}!mqtt\_sub\_done@{mqtt\_sub\_done}}
+\index{mqtt\_sub\_done@{mqtt\_sub\_done}!mqtt.h@{mqtt.h}}
+\doxysubsubsection{\texorpdfstring{mqtt\_sub\_done()}{mqtt\_sub\_done()}}
+{\footnotesize\ttfamily void mqtt\+\_\+sub\+\_\+done (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Signal to the system that all M\+Q\+TT topics has been successfully subscribed to. 

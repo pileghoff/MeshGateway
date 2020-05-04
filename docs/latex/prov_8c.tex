@@ -1,0 +1,179 @@
+\hypertarget{prov_8c}{}\doxysection{/home/pil/\+Projects/\+Mesh\+Gateway/src/components/gateway/prov.c File Reference}
+\label{prov_8c}\index{/home/pil/Projects/MeshGateway/src/components/gateway/prov.c@{/home/pil/Projects/MeshGateway/src/components/gateway/prov.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+log.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}nvs\+\_\+flash.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+bt.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+bt\+\_\+main.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+bt\+\_\+device.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+ble\+\_\+mesh\+\_\+defs.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+ble\+\_\+mesh\+\_\+common\+\_\+api.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+ble\+\_\+mesh\+\_\+provisioning\+\_\+api.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+ble\+\_\+mesh\+\_\+networking\+\_\+api.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+ble\+\_\+mesh\+\_\+config\+\_\+model\+\_\+api.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+ble\+\_\+mesh\+\_\+generic\+\_\+model\+\_\+api.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}prov.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}common.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}uuid\+\_\+list.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}mqtt.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structesp__ble__mesh__key}{esp\+\_\+ble\+\_\+mesh\+\_\+key}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{prov_8c_afc1a880890590225677d9626b4855212}{P\+R\+O\+V\+\_\+\+O\+W\+N\+\_\+\+A\+D\+DR}}~0x0001
+\item 
+\#define \mbox{\hyperlink{prov_8c_afc3d101f633a076cc1ca84b85b6224b2}{T\+AG}}~\char`\"{}mesh\+\_\+prov\char`\"{}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{prov_8c_a525c2dc3753fab77fc6bd724dce43b64}{start\+\_\+prov}} (\mbox{\hyperlink{structdevice__t}{device\+\_\+t}} $\ast$dev)
+\item 
+void \mbox{\hyperlink{prov_8c_a87e82917791eee23c7c3d1053c1d53f3}{end\+\_\+prov}} (int reason)
+\item 
+esp\+\_\+err\+\_\+t \mbox{\hyperlink{prov_8c_a7efae311210efe988f12f956cf2c3d3e}{prov\+\_\+complete}} (int node\+\_\+idx, const esp\+\_\+ble\+\_\+mesh\+\_\+octet16\+\_\+t uuid, uint16\+\_\+t unicast, uint8\+\_\+t elem\+\_\+num, uint16\+\_\+t net\+\_\+idx)
+\item 
+void \mbox{\hyperlink{prov_8c_a70a36b77db78dd01d6dedd5ca0b5da42}{new\+\_\+device}} (uint8\+\_\+t dev\+\_\+uuid\mbox{[}16\mbox{]}, uint8\+\_\+t addr\mbox{[}E\+S\+P\+\_\+\+B\+D\+\_\+\+A\+D\+D\+R\+\_\+\+L\+EN\mbox{]}, esp\+\_\+ble\+\_\+addr\+\_\+type\+\_\+t addr\+\_\+type, uint16\+\_\+t oob\+\_\+info, uint8\+\_\+t adv\+\_\+type, esp\+\_\+ble\+\_\+mesh\+\_\+prov\+\_\+bearer\+\_\+t bearer)
+\item 
+void \mbox{\hyperlink{prov_8c_a97f2e52e8c116c3718ea285c48415df9}{prov\+\_\+cb}} (esp\+\_\+ble\+\_\+mesh\+\_\+prov\+\_\+cb\+\_\+event\+\_\+t event, esp\+\_\+ble\+\_\+mesh\+\_\+prov\+\_\+cb\+\_\+param\+\_\+t $\ast$param)
+\item 
+void \mbox{\hyperlink{prov_8c_a617a52007e7987e81b865d1f4137a478}{prov\+\_\+init}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{prov_8c_a247fad05a3f83ac8d7c48499ad1673cf}{self\+\_\+uuid}} \mbox{[}16\mbox{]}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{prov_8c_a4b430813dba7bd2c6edf758685586594}{oob}} \mbox{[}6\mbox{]} = \{0\}
+\item 
+esp\+\_\+ble\+\_\+mesh\+\_\+prov\+\_\+t \mbox{\hyperlink{prov_8c_aa4572504622beb18ca2f41077573ee52}{provision}}
+\item 
+Queue\+Handle\+\_\+t \mbox{\hyperlink{prov_8c_aa3ed7a87a086ccab1dd3f65c5b3dee66}{prov\+\_\+queue}}
+\item 
+Semaphore\+Handle\+\_\+t \mbox{\hyperlink{prov_8c_a11348e2e91102a5a6989a3b8a89bfc40}{prov\+\_\+sem}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{prov_8c_a332d2a1afc1c2344812dbd27ef7fcbba}{current\+\_\+uuid}} \mbox{[}16\mbox{]}
+\item 
+struct \mbox{\hyperlink{structesp__ble__mesh__key}{esp\+\_\+ble\+\_\+mesh\+\_\+key}} \mbox{\hyperlink{prov_8c_afae6ebd19d3b5668aa9313c191c6096f}{prov\+\_\+key}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{prov_8c_afc1a880890590225677d9626b4855212}\label{prov_8c_afc1a880890590225677d9626b4855212}} 
+\index{prov.c@{prov.c}!PROV\_OWN\_ADDR@{PROV\_OWN\_ADDR}}
+\index{PROV\_OWN\_ADDR@{PROV\_OWN\_ADDR}!prov.c@{prov.c}}
+\doxysubsubsection{\texorpdfstring{PROV\_OWN\_ADDR}{PROV\_OWN\_ADDR}}
+{\footnotesize\ttfamily \#define P\+R\+O\+V\+\_\+\+O\+W\+N\+\_\+\+A\+D\+DR~0x0001}
+
+\mbox{\Hypertarget{prov_8c_afc3d101f633a076cc1ca84b85b6224b2}\label{prov_8c_afc3d101f633a076cc1ca84b85b6224b2}} 
+\index{prov.c@{prov.c}!TAG@{TAG}}
+\index{TAG@{TAG}!prov.c@{prov.c}}
+\doxysubsubsection{\texorpdfstring{TAG}{TAG}}
+{\footnotesize\ttfamily \#define T\+AG~\char`\"{}mesh\+\_\+prov\char`\"{}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{prov_8c_a87e82917791eee23c7c3d1053c1d53f3}\label{prov_8c_a87e82917791eee23c7c3d1053c1d53f3}} 
+\index{prov.c@{prov.c}!end\_prov@{end\_prov}}
+\index{end\_prov@{end\_prov}!prov.c@{prov.c}}
+\doxysubsubsection{\texorpdfstring{end\_prov()}{end\_prov()}}
+{\footnotesize\ttfamily void end\+\_\+prov (\begin{DoxyParamCaption}\item[{int}]{reason }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{prov_8c_a70a36b77db78dd01d6dedd5ca0b5da42}\label{prov_8c_a70a36b77db78dd01d6dedd5ca0b5da42}} 
+\index{prov.c@{prov.c}!new\_device@{new\_device}}
+\index{new\_device@{new\_device}!prov.c@{prov.c}}
+\doxysubsubsection{\texorpdfstring{new\_device()}{new\_device()}}
+{\footnotesize\ttfamily void new\+\_\+device (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{dev\+\_\+uuid\mbox{[}16\mbox{]},  }\item[{uint8\+\_\+t}]{addr\mbox{[}\+E\+S\+P\+\_\+\+B\+D\+\_\+\+A\+D\+D\+R\+\_\+\+L\+E\+N\mbox{]},  }\item[{esp\+\_\+ble\+\_\+addr\+\_\+type\+\_\+t}]{addr\+\_\+type,  }\item[{uint16\+\_\+t}]{oob\+\_\+info,  }\item[{uint8\+\_\+t}]{adv\+\_\+type,  }\item[{esp\+\_\+ble\+\_\+mesh\+\_\+prov\+\_\+bearer\+\_\+t}]{bearer }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{prov_8c_a97f2e52e8c116c3718ea285c48415df9}\label{prov_8c_a97f2e52e8c116c3718ea285c48415df9}} 
+\index{prov.c@{prov.c}!prov\_cb@{prov\_cb}}
+\index{prov\_cb@{prov\_cb}!prov.c@{prov.c}}
+\doxysubsubsection{\texorpdfstring{prov\_cb()}{prov\_cb()}}
+{\footnotesize\ttfamily void prov\+\_\+cb (\begin{DoxyParamCaption}\item[{esp\+\_\+ble\+\_\+mesh\+\_\+prov\+\_\+cb\+\_\+event\+\_\+t}]{event,  }\item[{esp\+\_\+ble\+\_\+mesh\+\_\+prov\+\_\+cb\+\_\+param\+\_\+t $\ast$}]{param }\end{DoxyParamCaption})}
+
+Provisioning client callback function. \mbox{\Hypertarget{prov_8c_a7efae311210efe988f12f956cf2c3d3e}\label{prov_8c_a7efae311210efe988f12f956cf2c3d3e}} 
+\index{prov.c@{prov.c}!prov\_complete@{prov\_complete}}
+\index{prov\_complete@{prov\_complete}!prov.c@{prov.c}}
+\doxysubsubsection{\texorpdfstring{prov\_complete()}{prov\_complete()}}
+{\footnotesize\ttfamily esp\+\_\+err\+\_\+t prov\+\_\+complete (\begin{DoxyParamCaption}\item[{int}]{node\+\_\+idx,  }\item[{const esp\+\_\+ble\+\_\+mesh\+\_\+octet16\+\_\+t}]{uuid,  }\item[{uint16\+\_\+t}]{unicast,  }\item[{uint8\+\_\+t}]{elem\+\_\+num,  }\item[{uint16\+\_\+t}]{net\+\_\+idx }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{prov_8c_a617a52007e7987e81b865d1f4137a478}\label{prov_8c_a617a52007e7987e81b865d1f4137a478}} 
+\index{prov.c@{prov.c}!prov\_init@{prov\_init}}
+\index{prov\_init@{prov\_init}!prov.c@{prov.c}}
+\doxysubsubsection{\texorpdfstring{prov\_init()}{prov\_init()}}
+{\footnotesize\ttfamily void prov\+\_\+init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Initialize the required resources for the provisioning client \mbox{\Hypertarget{prov_8c_a525c2dc3753fab77fc6bd724dce43b64}\label{prov_8c_a525c2dc3753fab77fc6bd724dce43b64}} 
+\index{prov.c@{prov.c}!start\_prov@{start\_prov}}
+\index{start\_prov@{start\_prov}!prov.c@{prov.c}}
+\doxysubsubsection{\texorpdfstring{start\_prov()}{start\_prov()}}
+{\footnotesize\ttfamily void start\+\_\+prov (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structdevice__t}{device\+\_\+t}} $\ast$}]{dev }\end{DoxyParamCaption})}
+
+Start the provisioning process for a device. 
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{prov_8c_a332d2a1afc1c2344812dbd27ef7fcbba}\label{prov_8c_a332d2a1afc1c2344812dbd27ef7fcbba}} 
+\index{prov.c@{prov.c}!current\_uuid@{current\_uuid}}
+\index{current\_uuid@{current\_uuid}!prov.c@{prov.c}}
+\doxysubsubsection{\texorpdfstring{current\_uuid}{current\_uuid}}
+{\footnotesize\ttfamily uint8\+\_\+t current\+\_\+uuid\mbox{[}16\mbox{]}}
+
+\mbox{\Hypertarget{prov_8c_a4b430813dba7bd2c6edf758685586594}\label{prov_8c_a4b430813dba7bd2c6edf758685586594}} 
+\index{prov.c@{prov.c}!oob@{oob}}
+\index{oob@{oob}!prov.c@{prov.c}}
+\doxysubsubsection{\texorpdfstring{oob}{oob}}
+{\footnotesize\ttfamily uint8\+\_\+t oob\mbox{[}6\mbox{]} = \{0\}}
+
+\mbox{\Hypertarget{prov_8c_afae6ebd19d3b5668aa9313c191c6096f}\label{prov_8c_afae6ebd19d3b5668aa9313c191c6096f}} 
+\index{prov.c@{prov.c}!prov\_key@{prov\_key}}
+\index{prov\_key@{prov\_key}!prov.c@{prov.c}}
+\doxysubsubsection{\texorpdfstring{prov\_key}{prov\_key}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structesp__ble__mesh__key}{esp\+\_\+ble\+\_\+mesh\+\_\+key}} prov\+\_\+key}
+
+\mbox{\Hypertarget{prov_8c_aa3ed7a87a086ccab1dd3f65c5b3dee66}\label{prov_8c_aa3ed7a87a086ccab1dd3f65c5b3dee66}} 
+\index{prov.c@{prov.c}!prov\_queue@{prov\_queue}}
+\index{prov\_queue@{prov\_queue}!prov.c@{prov.c}}
+\doxysubsubsection{\texorpdfstring{prov\_queue}{prov\_queue}}
+{\footnotesize\ttfamily Queue\+Handle\+\_\+t prov\+\_\+queue}
+
+\mbox{\Hypertarget{prov_8c_a11348e2e91102a5a6989a3b8a89bfc40}\label{prov_8c_a11348e2e91102a5a6989a3b8a89bfc40}} 
+\index{prov.c@{prov.c}!prov\_sem@{prov\_sem}}
+\index{prov\_sem@{prov\_sem}!prov.c@{prov.c}}
+\doxysubsubsection{\texorpdfstring{prov\_sem}{prov\_sem}}
+{\footnotesize\ttfamily Semaphore\+Handle\+\_\+t prov\+\_\+sem}
+
+\mbox{\Hypertarget{prov_8c_aa4572504622beb18ca2f41077573ee52}\label{prov_8c_aa4572504622beb18ca2f41077573ee52}} 
+\index{prov.c@{prov.c}!provision@{provision}}
+\index{provision@{provision}!prov.c@{prov.c}}
+\doxysubsubsection{\texorpdfstring{provision}{provision}}
+{\footnotesize\ttfamily esp\+\_\+ble\+\_\+mesh\+\_\+prov\+\_\+t provision}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{  .prov\_uuid           = \mbox{\hyperlink{prov_8c_a247fad05a3f83ac8d7c48499ad1673cf}{self\_uuid}},}
+\DoxyCodeLine{  .prov\_unicast\_addr   = \mbox{\hyperlink{prov_8c_afc1a880890590225677d9626b4855212}{PROV\_OWN\_ADDR}},}
+\DoxyCodeLine{  .prov\_start\_address  = 0x0005,}
+\DoxyCodeLine{  .prov\_attention      = 0x00,}
+\DoxyCodeLine{  .prov\_algorithm      = 0x00,}
+\DoxyCodeLine{  .prov\_pub\_key\_oob    = 0x00,}
+\DoxyCodeLine{  .prov\_static\_oob\_val = \mbox{\hyperlink{prov_8c_a4b430813dba7bd2c6edf758685586594}{oob}},}
+\DoxyCodeLine{  .prov\_static\_oob\_len = \textcolor{keyword}{sizeof}(\mbox{\hyperlink{prov_8c_a4b430813dba7bd2c6edf758685586594}{oob}}),}
+\DoxyCodeLine{  .flags               = 0x00,}
+\DoxyCodeLine{  .iv\_index            = 0x00,}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{prov_8c_a247fad05a3f83ac8d7c48499ad1673cf}\label{prov_8c_a247fad05a3f83ac8d7c48499ad1673cf}} 
+\index{prov.c@{prov.c}!self\_uuid@{self\_uuid}}
+\index{self\_uuid@{self\_uuid}!prov.c@{prov.c}}
+\doxysubsubsection{\texorpdfstring{self\_uuid}{self\_uuid}}
+{\footnotesize\ttfamily uint8\+\_\+t self\+\_\+uuid\mbox{[}16\mbox{]}}
+
